@@ -1,7 +1,9 @@
 # Directories
-## Design:
+## design:
 > Contains the UI/UX, UML, Flowchart... etc.
-## Source code:
+## py_source:
+> Contains the trained DL model, OpenCV model, words dataset.
+## source_code:
 > Contains the flutter code and all required assets.
 
 # Videos we have to watch:
