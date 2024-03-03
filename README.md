@@ -4,4 +4,5 @@
 ## Design:
 ### Contains the UI/UX, UML, Flowchart... etc.
 # Videos we have to watch:
-## integrate Gemini's API -> https://ai.google.dev/tutorials/dart_quickstart
+## integrate Gemini's API [link](https://ai.google.dev/tutorials/dart_quickstart)
+## 
