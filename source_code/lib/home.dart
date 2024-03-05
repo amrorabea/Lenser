@@ -8,14 +8,14 @@ class Home extends StatefulWidget {
   const Home({super.key});
 
   @override
-  State<Home> createState() => _LoginState();
+  State<Home> createState() => _HomeState();
 }
 
 double wid = 90;
 int counter = 0;
 const double lenser = 35;
 
-class _LoginState extends State<Home> {
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -261,7 +261,7 @@ class _LoginState extends State<Home> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const chatBot(),
+                          builder: (context) => const ChatBot(),
                         ),
                       );
                     }, // takes us to the home page

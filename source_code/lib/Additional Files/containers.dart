@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:source_code/Additional%20Files/colors.dart';
 import 'package:source_code/about.dart';
 import 'package:source_code/home.dart';
@@ -138,7 +137,7 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const settings(),
+                  builder: (context) => const Settings(),
                 ),
               );
             } else if (value == 3) {
