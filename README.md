@@ -10,3 +10,5 @@
 > integrate **Gemini's API**: [Tutorial](https://ai.google.dev/tutorials/dart_quickstart)
 > 
 > Use **OpenCV code in flutter**: [Video](https://www.youtube.com/watch?v=wGH_KWpaAVM)
+>
+> Firebase usage in Login & SignUp Pages [Video](https://www.youtube.com/watch?v=IPMIcGTzxGc)
