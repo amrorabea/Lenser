@@ -3,7 +3,10 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:source_code/Additional%20Files/colors.dart';
+import 'package:source_code/about.dart';
 import 'package:source_code/home.dart';
+import 'package:source_code/settings.dart';
+import 'package:source_code/signing/login.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 // CIRCLES
@@ -76,6 +79,7 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
           ),
           itemBuilder: (context) => [
             const PopupMenuItem(
+              value: 1,
               child: Row(
                 children: [
                   Icon(
@@ -88,6 +92,7 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
               // value: Home(),
             ),
             const PopupMenuItem(
+              value: 2,
               child: Row(
                 children: [
                   Icon(
@@ -100,6 +105,7 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
               // value: Home(),
             ),
             const PopupMenuItem(
+              value: 3,
               child: Row(
                 children: [
                   Icon(
@@ -112,6 +118,7 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
               // value: Home(),
             ),
             const PopupMenuItem(
+              value: 4,
               child: Row(
                 children: [
                   Icon(
@@ -124,6 +131,37 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
               // value: Home(),
             ),
           ],
+          onSelected: (value) {
+            if (value == 1) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const Home(),
+                ),
+              );
+            } else if (value == 2) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const settings(),
+                ),
+              );
+            } else if (value == 3) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const aboutPage(),
+                ),
+              );
+            } else if (value == 4) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const login(),
+                ),
+              );
+            }
+          },
         ),
         const SizedBox(width: 5),
       ],
