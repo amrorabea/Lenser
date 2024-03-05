@@ -115,7 +115,7 @@ class _LoginState extends State<Home> {
                   ),
                   // ======================================================
                   const Padding(
-                    padding: EdgeInsets.only(left: 10),
+                    padding: EdgeInsets.only(left: 10, right: 5),
                     child: Row(
                       children: [
                         Column(
@@ -198,52 +198,62 @@ class _LoginState extends State<Home> {
                     ),
                   ),
                   const SizedBox(height: 30),
-                  const Row(
-                    children: [
-                      Column(
-                        children: [
-                          Text(
-                            "Gemini API",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 30,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            "with the help of",
-                            style: TextStyle(color: Colors.white, fontSize: 20),
-                          ),
-                          Text(
-                            "Gemini,",
-                            style: TextStyle(color: Colors.white, fontSize: 20),
-                          ),
-                          Text(
-                            "you can now send the",
-                            style: TextStyle(color: Colors.white, fontSize: 20),
-                          ),
-                          Text(
-                            "image to Gemini, and it",
-                            style: TextStyle(color: Colors.white, fontSize: 20),
-                          ),
-                          Text(
-                            "will response to you",
-                            style: TextStyle(color: Colors.white, fontSize: 20),
-                          ),
-                          Text(
-                            "with additional info on",
-                            style: TextStyle(color: Colors.white, fontSize: 20),
-                          ),
-                          Text(
-                            "the detected objects!",
-                            style: TextStyle(color: Colors.white, fontSize: 20),
-                          ),
-                        ],
-                      ),
-                      Image(
-                        image: AssetImage('images/bot.png'),
-                        width: 150,
-                      )
-                    ],
+                  const Padding(
+                    padding: EdgeInsets.only(left: 3, right: 3),
+                    child: Row(
+                      children: [
+                        Column(
+                          children: [
+                            Text(
+                              "Gemini API",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              "with the help of",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20),
+                            ),
+                            Text(
+                              "Gemini,",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20),
+                            ),
+                            Text(
+                              "you can now send the",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20),
+                            ),
+                            Text(
+                              "image to Gemini, and it",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20),
+                            ),
+                            Text(
+                              "will response to you",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20),
+                            ),
+                            Text(
+                              "with additional info on",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20),
+                            ),
+                            Text(
+                              "the detected objects!",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20),
+                            ),
+                          ],
+                        ),
+                        Image(
+                          image: AssetImage('images/bot.png'),
+                          width: 150,
+                        )
+                      ],
+                    ),
                   ),
                   const SizedBox(height: 20),
                   ElevatedButton(
