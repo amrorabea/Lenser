@@ -7,7 +7,6 @@ import 'package:source_code/about.dart';
 import 'package:source_code/home.dart';
 import 'package:source_code/settings.dart';
 import 'package:source_code/signing/login.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 // CIRCLES
 class CircleContainer extends StatelessWidget {

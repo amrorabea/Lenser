@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:source_code/about.dart';
 import 'package:source_code/Additional%20Files/containers.dart';
-import 'package:source_code/home.dart';
 import 'package:source_code/Additional%20Files/colors.dart';
 
 class get_started extends StatelessWidget {
