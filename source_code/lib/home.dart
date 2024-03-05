@@ -13,6 +13,7 @@ class Home extends StatefulWidget {
 
 double wid = 90;
 int counter = 0;
+const double lenser = 35;
 
 class _LoginState extends State<Home> {
   @override
@@ -21,12 +22,12 @@ class _LoginState extends State<Home> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: backGround,
-        appBar: appBAR(),
+        appBar: const appBAR(),
         extendBodyBehindAppBar: true,
         body: SingleChildScrollView(
           child: Center(
             child: Padding(
-              padding: EdgeInsets.only(top: 50),
+              padding: const EdgeInsets.only(top: 50),
               child: Column(
                 children: [
                   const SizedBox(
@@ -53,73 +54,109 @@ class _LoginState extends State<Home> {
                     ),
                   ),
                   const Text(
-                    "welcom to",
-                    style: TextStyle(color: Colors.white, fontSize: 20),
+                    "Welcome to",
+                    style: TextStyle(color: Colors.white, fontSize: 25),
                   ),
                   const Text(
                     "𝕝𝕖𝕟𝕤𝕖𝕣,",
-                    style: TextStyle(color: Colors.white, fontSize: 30),
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: lenser,
+                        fontWeight: FontWeight.bold),
                   ),
                   const Text(
-                    "username",
-                    style: TextStyle(color: Colors.white, fontSize: 20),
+                    "USERNAME",
+                    style: TextStyle(color: Colors.white, fontSize: 25),
                   ),
                   const Text(
-                    "we  start  from  here",
-                    style: TextStyle(color: Colors.white, fontSize: 20),
+                    "We start from here",
+                    style: TextStyle(color: Colors.white, fontSize: 25),
                   ),
-                  SizedBox(
-                    height: 70,
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "𝕝𝕖𝕟𝕤𝕖𝕣",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: lenser,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        " is an app that is",
+                        style: TextStyle(color: Colors.white, fontSize: 25),
+                      ),
+                    ],
                   ),
                   const Text(
-                    "𝕝𝕖𝕟𝕤𝕖𝕣 is an app that is  ",
-                    style: TextStyle(color: Colors.white, fontSize: 30),
-                  ),
-                  const Text(
-                    "desingand to help you",
-                    style: TextStyle(color: Colors.white, fontSize: 30),
+                    "designed to help you",
+                    style: TextStyle(color: Colors.white, fontSize: 25),
                   ),
                   const Text(
                     "understand what your",
-                    style: TextStyle(color: Colors.white, fontSize: 30),
+                    style: TextStyle(color: Colors.white, fontSize: 25),
                   ),
                   const Text(
-                    "camera is recording using",
-                    style: TextStyle(color: Colors.white, fontSize: 30),
+                    "camera is recording using:",
+                    style: TextStyle(color: Colors.white, fontSize: 25),
                   ),
-                  //Spacer(),
-                  const Row(
-                    children: [
-                      Column(
-                        children: [
-                          Text(
-                            "object detection",
-                            style: TextStyle(color: Colors.white, fontSize: 30),
-                          ),
-                          Text(
-                            "ai model trained withe",
-                            style: TextStyle(color: Colors.white, fontSize: 20),
-                          ),
-                          Text(
-                            "deep learning to detect",
-                            style: TextStyle(color: Colors.white, fontSize: 20),
-                          ),
-                          Text(
-                            " objects recorder by ",
-                            style: TextStyle(color: Colors.white, fontSize: 20),
-                          ),
-                          Text(
-                            "camera",
-                            style: TextStyle(color: Colors.white, fontSize: 20),
-                          ),
-                        ],
-                      ),
-                      Image(
-                        image: AssetImage('images/camera.png'),
-                        width: 100,
-                      )
-                    ],
+                  const SizedBox(
+                    height: 20,
                   ),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 30, right: 30),
+                    child: Divider(
+                      thickness: 2,
+                      color: Colors.white,
+                    ),
+                  ),
+                  // ======================================================
+                  const Padding(
+                    padding: EdgeInsets.only(left: 10),
+                    child: Row(
+                      children: [
+                        Column(
+                          children: [
+                            Text(
+                              "Object Detection",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              "AI model trained with",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20),
+                            ),
+                            Text(
+                              "Deep Learning to detect",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20),
+                            ),
+                            Text(
+                              "objects recorded by",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20),
+                            ),
+                            Text(
+                              "camera",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20),
+                            ),
+                          ],
+                        ),
+                        Image(
+                          image: AssetImage('images/camera.png'),
+                          width: 120,
+                        )
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed: () {
                       Navigator.push(
@@ -137,34 +174,55 @@ class _LoginState extends State<Home> {
                       ),
                     ),
                     child: const Text(
-                      "try it",
+                      "Try it",
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 25,
                       ),
                     ),
                   ),
+                  // =====================================
+                  const SizedBox(height: 30),
+                  const Text(
+                    "Additional Features",
+                    style: TextStyle(
+                      fontSize: 30,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 30, right: 30),
+                    child: Divider(
+                      thickness: 2,
+                      color: Colors.white,
+                    ),
+                  ),
+                  const SizedBox(height: 30),
                   const Row(
                     children: [
                       Column(
                         children: [
                           Text(
-                            "gemini api",
-                            style: TextStyle(color: Colors.white, fontSize: 30),
+                            "Gemini API",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold),
                           ),
                           Text(
-                            "wtih the help of",
+                            "with the help of",
                             style: TextStyle(color: Colors.white, fontSize: 20),
                           ),
                           Text(
-                            "gemini,",
+                            "Gemini,",
                             style: TextStyle(color: Colors.white, fontSize: 20),
                           ),
                           Text(
-                            " you can now send the ",
+                            "you can now send the",
                             style: TextStyle(color: Colors.white, fontSize: 20),
                           ),
                           Text(
-                            "image to gmini, and it",
+                            "image to Gemini, and it",
                             style: TextStyle(color: Colors.white, fontSize: 20),
                           ),
                           Text(
@@ -172,7 +230,7 @@ class _LoginState extends State<Home> {
                             style: TextStyle(color: Colors.white, fontSize: 20),
                           ),
                           Text(
-                            "with additional info on ",
+                            "with additional info on",
                             style: TextStyle(color: Colors.white, fontSize: 20),
                           ),
                           Text(
@@ -182,11 +240,12 @@ class _LoginState extends State<Home> {
                         ],
                       ),
                       Image(
-                        image: AssetImage('images/camera.png'),
-                        width: 100,
+                        image: AssetImage('images/bot.png'),
+                        width: 150,
                       )
                     ],
                   ),
+                  const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed: () {
                       Navigator.push(
@@ -204,12 +263,13 @@ class _LoginState extends State<Home> {
                       ),
                     ),
                     child: const Text(
-                      "try gemini's api",
+                      "Try Gemini's API",
                       style: TextStyle(
                         fontSize: 20,
                       ),
                     ),
                   ),
+                  const SizedBox(height: 30),
                 ],
               ),
             ),

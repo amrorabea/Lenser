@@ -89,7 +89,6 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
                   Text('Home'),
                 ],
               ),
-              // value: Home(),
             ),
             const PopupMenuItem(
               value: 2,
@@ -102,7 +101,6 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
                   Text('Settings'),
                 ],
               ),
-              // value: Home(),
             ),
             const PopupMenuItem(
               value: 3,
@@ -115,7 +113,6 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
                   Text('About'),
                 ],
               ),
-              // value: Home(),
             ),
             const PopupMenuItem(
               value: 4,
@@ -128,7 +125,6 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
                   Text('Logout'),
                 ],
               ),
-              // value: Home(),
             ),
           ],
           onSelected: (value) {
