@@ -55,22 +55,22 @@ class _HomeState extends State<Home> {
                   ),
                   const Text(
                     "Welcome to",
-                    style: TextStyle(color: Colors.white, fontSize: 25),
+                    style: TextStyle(color: fontColor, fontSize: 25),
                   ),
                   const Text(
                     "𝕝𝕖𝕟𝕤𝕖𝕣,",
                     style: TextStyle(
-                        color: Colors.white,
+                        color: fontColor,
                         fontSize: lenser,
                         fontWeight: FontWeight.bold),
                   ),
                   const Text(
                     "USERNAME",
-                    style: TextStyle(color: Colors.white, fontSize: 25),
+                    style: TextStyle(color: fontColor, fontSize: 25),
                   ),
                   const Text(
                     "We start from here",
-                    style: TextStyle(color: Colors.white, fontSize: 25),
+                    style: TextStyle(color: fontColor, fontSize: 25),
                   ),
                   const SizedBox(
                     height: 30,
@@ -81,27 +81,27 @@ class _HomeState extends State<Home> {
                       Text(
                         "𝕝𝕖𝕟𝕤𝕖𝕣",
                         style: TextStyle(
-                            color: Colors.white,
+                            color: fontColor,
                             fontSize: lenser,
                             fontWeight: FontWeight.bold),
                       ),
                       Text(
                         " is an app that is",
-                        style: TextStyle(color: Colors.white, fontSize: 25),
+                        style: TextStyle(color: fontColor, fontSize: 25),
                       ),
                     ],
                   ),
                   const Text(
                     "designed to help you",
-                    style: TextStyle(color: Colors.white, fontSize: 25),
+                    style: TextStyle(color: fontColor, fontSize: 25),
                   ),
                   const Text(
                     "understand what your",
-                    style: TextStyle(color: Colors.white, fontSize: 25),
+                    style: TextStyle(color: fontColor, fontSize: 25),
                   ),
                   const Text(
                     "camera is recording using:",
-                    style: TextStyle(color: Colors.white, fontSize: 25),
+                    style: TextStyle(color: fontColor, fontSize: 25),
                   ),
                   const SizedBox(
                     height: 20,
@@ -110,7 +110,7 @@ class _HomeState extends State<Home> {
                     padding: EdgeInsets.only(left: 30, right: 30),
                     child: Divider(
                       thickness: 2,
-                      color: Colors.white,
+                      color: fontColor,
                     ),
                   ),
                   // ======================================================
@@ -123,29 +123,25 @@ class _HomeState extends State<Home> {
                             Text(
                               "Object Detection",
                               style: TextStyle(
-                                  color: Colors.white,
+                                  color: fontColor,
                                   fontSize: 30,
                                   fontWeight: FontWeight.bold),
                             ),
                             Text(
                               "AI model trained with",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 20),
+                              style: TextStyle(color: fontColor, fontSize: 20),
                             ),
                             Text(
                               "Deep Learning to detect",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 20),
+                              style: TextStyle(color: fontColor, fontSize: 20),
                             ),
                             Text(
                               "objects recorded by",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 20),
+                              style: TextStyle(color: fontColor, fontSize: 20),
                             ),
                             Text(
                               "camera",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 20),
+                              style: TextStyle(color: fontColor, fontSize: 20),
                             ),
                           ],
                         ),
@@ -186,7 +182,7 @@ class _HomeState extends State<Home> {
                     "Additional Features",
                     style: TextStyle(
                       fontSize: 30,
-                      color: Colors.white,
+                      color: fontColor,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -194,7 +190,7 @@ class _HomeState extends State<Home> {
                     padding: EdgeInsets.only(left: 30, right: 30),
                     child: Divider(
                       thickness: 2,
-                      color: Colors.white,
+                      color: fontColor,
                     ),
                   ),
                   const SizedBox(height: 30),
@@ -213,38 +209,31 @@ class _HomeState extends State<Home> {
                             ),
                             Text(
                               "with the help of",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 20),
+                              style: TextStyle(color: fontColor, fontSize: 20),
                             ),
                             Text(
                               "Gemini,",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 20),
+                              style: TextStyle(color: fontColor, fontSize: 20),
                             ),
                             Text(
                               "you can now send the",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 20),
+                              style: TextStyle(color: fontColor, fontSize: 20),
                             ),
                             Text(
                               "image to Gemini, and it",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 20),
+                              style: TextStyle(color: fontColor, fontSize: 20),
                             ),
                             Text(
                               "will response to you",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 20),
+                              style: TextStyle(color: fontColor, fontSize: 20),
                             ),
                             Text(
                               "with additional info on",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 20),
+                              style: TextStyle(color: fontColor, fontSize: 20),
                             ),
                             Text(
                               "the detected objects!",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 20),
+                              style: TextStyle(color: fontColor, fontSize: 20),
                             ),
                           ],
                         ),

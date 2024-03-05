@@ -59,42 +59,42 @@ class _aboutPageState extends State<aboutPage> {
                   "This project was created",
                   style: TextStyle(
                     fontSize: sizeCategories,
-                    color: Colors.white,
+                    color: fontColor,
                   ),
                 ),
                 const Text(
                   "by Modern Academy students",
                   style: TextStyle(
                     fontSize: sizeCategories,
-                    color: Colors.white,
+                    color: fontColor,
                   ),
                 ),
                 const Text(
                   "and used the programming languages",
                   style: TextStyle(
                     fontSize: sizeCategories,
-                    color: Colors.white,
+                    color: fontColor,
                   ),
                 ),
                 const Text(
                   "(Flutter, Python)",
                   style: TextStyle(
                     fontSize: sizeCategories,
-                    color: Colors.white,
+                    color: fontColor,
                   ),
                 ),
                 const Text(
                   "and the help of artificial intelligence,",
                   style: TextStyle(
                     fontSize: sizeCategories,
-                    color: Colors.white,
+                    color: fontColor,
                   ),
                 ),
                 const Text(
                   "which participated in it:",
                   style: TextStyle(
                     fontSize: sizeCategories,
-                    color: Colors.white,
+                    color: fontColor,
                   ),
                 ),
                 const SizedBox(
@@ -111,7 +111,7 @@ class _aboutPageState extends State<aboutPage> {
                   padding: EdgeInsets.only(
                       left: paddingDividerLeft, right: paddingDividerRight),
                   child: Divider(
-                    color: Colors.white,
+                    color: fontColor,
                     thickness: 2,
                   ),
                 ),
@@ -127,7 +127,7 @@ class _aboutPageState extends State<aboutPage> {
                   padding: EdgeInsets.only(
                       left: paddingDividerLeft, right: paddingDividerRight),
                   child: Divider(
-                    color: Colors.white,
+                    color: fontColor,
                     thickness: 2,
                   ),
                 ),
@@ -143,7 +143,7 @@ class _aboutPageState extends State<aboutPage> {
                   padding: EdgeInsets.only(
                       left: paddingDividerLeft, right: paddingDividerRight),
                   child: Divider(
-                    color: Colors.white,
+                    color: fontColor,
                     thickness: 2,
                   ),
                 ),
@@ -159,7 +159,7 @@ class _aboutPageState extends State<aboutPage> {
                   padding: EdgeInsets.only(
                       left: paddingDividerLeft, right: paddingDividerRight),
                   child: Divider(
-                    color: Colors.white,
+                    color: fontColor,
                     thickness: 2,
                   ),
                 ),
@@ -175,7 +175,7 @@ class _aboutPageState extends State<aboutPage> {
                   padding: EdgeInsets.only(
                       left: paddingDividerLeft, right: paddingDividerRight),
                   child: Divider(
-                    color: Colors.white,
+                    color: fontColor,
                     thickness: 2,
                   ),
                 ),
@@ -190,7 +190,7 @@ class _aboutPageState extends State<aboutPage> {
                 const Padding(
                   padding: EdgeInsets.only(left: 0, right: 0),
                   child: Divider(
-                    color: Colors.white,
+                    color: fontColor,
                     thickness: 2,
                   ),
                 ),
@@ -199,7 +199,7 @@ class _aboutPageState extends State<aboutPage> {
                   "You can contact us though",
                   style: TextStyle(
                     fontSize: sizeTitles,
-                    color: Colors.white,
+                    color: fontColor,
                   ),
                 ),
                 InkWell(
@@ -215,7 +215,7 @@ class _aboutPageState extends State<aboutPage> {
                 ),
                 const Text(
                   "Gmail",
-                  style: TextStyle(fontSize: sizeMedia, color: Colors.white),
+                  style: TextStyle(fontSize: sizeMedia, color: fontColor),
                 ),
                 InkWell(
                   onTap: () async {
@@ -232,7 +232,7 @@ class _aboutPageState extends State<aboutPage> {
                   "Facebook",
                   style: TextStyle(
                     fontSize: sizeMedia,
-                    color: Colors.white,
+                    color: fontColor,
                   ),
                 ),
                 InkWell(
@@ -250,7 +250,7 @@ class _aboutPageState extends State<aboutPage> {
                   "Twitter",
                   style: TextStyle(
                     fontSize: sizeMedia,
-                    color: Colors.white,
+                    color: fontColor,
                   ),
                 ),
                 InkWell(
@@ -268,7 +268,7 @@ class _aboutPageState extends State<aboutPage> {
                   "GitHub",
                   style: TextStyle(
                     fontSize: sizeMedia,
-                    color: Colors.white,
+                    color: fontColor,
                   ),
                 ),
               ],

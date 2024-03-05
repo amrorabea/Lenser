@@ -42,7 +42,7 @@ class get_started extends StatelessWidget {
               "Know what you are looking for",
               style: TextStyle(
                 fontSize: 23,
-                color: Colors.white,
+                color: fontColor,
               ),
             ),
             const Spacer(),
@@ -54,7 +54,7 @@ class get_started extends StatelessWidget {
               style: TextStyle(
                 fontSize: 50,
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
+                color: fontColor,
               ),
             ),
             const Spacer(),
@@ -65,7 +65,7 @@ class get_started extends StatelessWidget {
               "Not sure how to describe what you see\n                          in words?\n     Use your camera to detect it and\nsearch for it using AI & Google Gemini!",
               style: TextStyle(
                 fontSize: 15,
-                color: Colors.white,
+                color: fontColor,
               ),
             ),
             const Spacer(),
