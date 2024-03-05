@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:source_code/Additional%20Files/colors.dart';
 import 'package:source_code/Additional%20Files/containers.dart';
+import 'package:source_code/chatbot.dart';
+import 'package:source_code/object_detection.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -160,7 +162,7 @@ class _LoginState extends State<Home> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const Home(),
+                          builder: (context) => const ObjectDetection(),
                         ),
                       );
                     }, // takes us to the home page
@@ -249,7 +251,7 @@ class _LoginState extends State<Home> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const Home(),
+                          builder: (context) => const chatBot(),
                         ),
                       );
                     }, // takes us to the home page
