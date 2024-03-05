@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:source_code/containers.dart';
 import 'package:source_code/about.dart';
-import 'package:source_code/colors.dart';
+import 'package:source_code/Additional%20Files/containers.dart';
+import 'package:source_code/home.dart';
+import 'package:source_code/Additional%20Files/colors.dart';
 
 class get_started extends StatelessWidget {
   const get_started({super.key});
@@ -42,7 +43,6 @@ class get_started extends StatelessWidget {
               "Know what you are looking for",
               style: TextStyle(
                 fontSize: 23,
-                fontFamily: 'SemiBold',
                 color: Colors.white,
               ),
             ),
@@ -54,7 +54,6 @@ class get_started extends StatelessWidget {
               "𝕝𝕖𝕟𝕤𝕖𝕣",
               style: TextStyle(
                 fontSize: 50,
-                fontFamily: 'Black',
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
@@ -67,7 +66,6 @@ class get_started extends StatelessWidget {
               "Not sure how to describe what you see\n                          in words?\n     Use your camera to detect it and\nsearch for it using AI & Google Gemini!",
               style: TextStyle(
                 fontSize: 15,
-                fontFamily: 'SemiBold',
                 color: Colors.white,
               ),
             ),

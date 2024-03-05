@@ -2,8 +2,11 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:source_code/colors.dart';
+import 'package:source_code/Additional%20Files/colors.dart';
+import 'package:source_code/home.dart';
+import 'package:url_launcher/url_launcher.dart';
 
+// CIRCLES
 class CircleContainer extends StatelessWidget {
   const CircleContainer({
     super.key,
@@ -36,6 +39,7 @@ class CircleContainer extends StatelessWidget {
   }
 }
 
+// APP BAR ==================================
 class appBAR extends StatelessWidget implements PreferredSizeWidget {
   const appBAR({super.key});
 
