@@ -44,7 +44,6 @@ class _AboutPageState extends State<AboutPage> {
                 const Padding(
                   padding: EdgeInsets.only(left: 25, top: 10),
                   child: Row(
-                    // mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       GradientText(
                         text: "L",

@@ -19,11 +19,16 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
         const SizedBox(width: 20),
         PopupMenuButton(
           shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(
-              Radius.circular(30.0),
+            borderRadius: BorderRadius.only(
+              topRight: Radius.circular(30.0),
+              bottomRight: Radius.circular(30.0),
             ),
           ),
-          child: Icon(
+          offset: const Offset(-20, 0),
+          constraints:
+              const BoxConstraints.expand(width: 150, height: double.infinity),
+          color: const Color.fromRGBO(0, 198, 168, 0.8),
+          child: const Icon(
             Icons.menu_rounded,
             size: 50,
             color: Colors.white,
