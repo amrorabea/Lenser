@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:source_code/Additional%20Files/colors.dart';
 import 'package:source_code/Additional%20Files/containers.dart';
 import 'package:source_code/chatbot.dart';
@@ -24,253 +26,160 @@ class _HomeState extends State<Home> {
         backgroundColor: backGround,
         appBar: const appBAR(),
         extendBodyBehindAppBar: true,
-        body: SingleChildScrollView(
-          child: Center(
-            child: Padding(
-              padding: const EdgeInsets.only(top: 50),
-              child: Column(
-                children: [
-                  const SizedBox(
-                    height: 100,
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          top: -50,
-                          right: 290,
-                          child: CircleContainer(
-                            height: 150,
-                            width: 150,
-                          ),
-                        ),
-                        Positioned(
-                          top: -85,
-                          right: 220,
-                          child: CircleContainer(
-                            height: 150,
-                            width: 150,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const Text(
-                    "Welcome to",
-                    style: TextStyle(color: fontColor, fontSize: 25),
-                  ),
-                  const Text(
-                    "𝕝𝕖𝕟𝕤𝕖𝕣,",
-                    style: TextStyle(
-                        color: fontColor,
-                        fontSize: lenser,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  const Text(
-                    "USERNAME",
-                    style: TextStyle(color: fontColor, fontSize: 25),
-                  ),
-                  const Text(
-                    "We start from here",
-                    style: TextStyle(color: fontColor, fontSize: 25),
-                  ),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+        body: Center(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 120),
+            child: Column(
+              children: [
+                const SizedBox(
+                  height: 20,
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(left: 30, right: 30),
+                ),
+                // ======================================================
+                const Padding(
+                  padding: EdgeInsets.only(left: 10, right: 5),
+                  child: Row(
                     children: [
-                      Text(
-                        "𝕝𝕖𝕟𝕤𝕖𝕣",
-                        style: TextStyle(
-                            color: fontColor,
-                            fontSize: lenser,
-                            fontWeight: FontWeight.bold),
+                      Column(
+                        children: [
+                          Text(
+                            "Object Detection",
+                            style: TextStyle(
+                                color: fontColor,
+                                fontSize: 30,
+                                height: 2,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            " AI model trained with deep \n learning to detect objects \n recorder by camera",
+                            style: TextStyle(color: fontColor, fontSize: 18),
+                          ),
+                        ],
                       ),
-                      Text(
-                        " is an app that is",
-                        style: TextStyle(color: fontColor, fontSize: 25),
-                      ),
+                      Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Image(
+                          image: AssetImage('images/camera.png'),
+                          width: 130,
+                          height: 160,
+                        ),
+                      )
                     ],
                   ),
-                  const Text(
-                    "designed to help you",
-                    style: TextStyle(color: fontColor, fontSize: 25),
-                  ),
-                  const Text(
-                    "understand what your",
-                    style: TextStyle(color: fontColor, fontSize: 25),
-                  ),
-                  const Text(
-                    "camera is recording using:",
-                    style: TextStyle(color: fontColor, fontSize: 25),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 30, right: 30),
-                    child: Divider(
-                      thickness: 2,
-                      color: fontColor,
-                    ),
-                  ),
-                  // ======================================================
-                  const Padding(
-                    padding: EdgeInsets.only(left: 10, right: 5),
-                    child: Row(
-                      children: [
-                        Column(
-                          children: [
-                            Text(
-                              "Object Detection",
-                              style: TextStyle(
-                                  color: fontColor,
-                                  fontSize: 30,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            Text(
-                              "AI model trained with",
-                              style: TextStyle(color: fontColor, fontSize: 20),
-                            ),
-                            Text(
-                              "Deep Learning to detect",
-                              style: TextStyle(color: fontColor, fontSize: 20),
-                            ),
-                            Text(
-                              "objects recorded by",
-                              style: TextStyle(color: fontColor, fontSize: 20),
-                            ),
-                            Text(
-                              "camera",
-                              style: TextStyle(color: fontColor, fontSize: 20),
-                            ),
-                          ],
-                        ),
-                        Image(
-                          image: AssetImage('images/camera.png'),
-                          width: 120,
-                        )
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 20),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const ObjectDetection(),
-                        ),
-                      );
-                    }, // takes us to the home page
-                    style: ElevatedButton.styleFrom(
-                      fixedSize: const Size(300, 50),
-                      backgroundColor: buttonColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15),
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ObjectDetection(),
                       ),
-                    ),
-                    child: const Text(
-                      "Try it",
-                      style: TextStyle(
-                        fontSize: 25,
-                      ),
+                    );
+                  }, // takes us to the home page
+                  style: ElevatedButton.styleFrom(
+                    fixedSize: const Size(200, 60),
+                    backgroundColor: buttonColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(14),
                     ),
                   ),
-                  // =====================================
-                  const SizedBox(height: 30),
-                  const Text(
-                    "Additional Features",
+                  child: const Text(
+                    "Try it !",
                     style: TextStyle(
-                      fontSize: 30,
-                      color: fontColor,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 22,
+                      color: Colors.white,
                     ),
                   ),
-                  const Padding(
+                ),
+                // =====================================
+                const SizedBox(height: 30),
+
+                const Padding(
                     padding: EdgeInsets.only(left: 30, right: 30),
-                    child: Divider(
-                      thickness: 2,
-                      color: fontColor,
-                    ),
-                  ),
-                  const SizedBox(height: 30),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 3, right: 3),
                     child: Row(
                       children: [
-                        Column(
-                          children: [
-                            Text(
-                              "Gemini API",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 30,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            Text(
-                              "with the help of",
-                              style: TextStyle(color: fontColor, fontSize: 20),
-                            ),
-                            Text(
-                              "Gemini,",
-                              style: TextStyle(color: fontColor, fontSize: 20),
-                            ),
-                            Text(
-                              "you can now send the",
-                              style: TextStyle(color: fontColor, fontSize: 20),
-                            ),
-                            Text(
-                              "image to Gemini, and it",
-                              style: TextStyle(color: fontColor, fontSize: 20),
-                            ),
-                            Text(
-                              "will response to you",
-                              style: TextStyle(color: fontColor, fontSize: 20),
-                            ),
-                            Text(
-                              "with additional info on",
-                              style: TextStyle(color: fontColor, fontSize: 20),
-                            ),
-                            Text(
-                              "the detected objects!",
-                              style: TextStyle(color: fontColor, fontSize: 20),
-                            ),
-                          ],
+                        Expanded(
+                          child: Divider(
+                            thickness: 2,
+                            color: fontColor,
+                          ),
                         ),
-                        Image(
-                          image: AssetImage('images/bot.png'),
-                          width: 150,
-                        )
+                        Text(
+                          "     And     ",
+                          style: TextStyle(color: Colors.white, fontSize: 18),
+                        ),
+                        Expanded(
+                          child: Divider(
+                            thickness: 2,
+                            color: fontColor,
+                          ),
+                        ),
                       ],
+                    )),
+
+                //==================================
+
+                const SizedBox(height: 40),
+                const Padding(
+                  padding: EdgeInsets.only(left: 3, right: 3),
+                  child: Row(
+                    children: [
+                      Column(
+                        children: [
+                          Text(
+                            "Gemini API",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 30,
+                                height: 2,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text(
+                              " With the help of\n Gemini,\n You can now send the\n image to Gemini, and it\n will response to you\n with additional info on\n the detected objects ",
+                              style: TextStyle(color: fontColor, fontSize: 18),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Image(
+                        image: AssetImage('images/bot.png'),
+                        width: 180,
+                      )
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ChatBot(),
+                      ),
+                    );
+                  }, // takes us to the home page
+                  style: ElevatedButton.styleFrom(
+                    fixedSize: const Size(227, 60),
+                    backgroundColor: buttonColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
                     ),
                   ),
-                  const SizedBox(height: 20),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const ChatBot(),
-                        ),
-                      );
-                    }, // takes us to the home page
-                    style: ElevatedButton.styleFrom(
-                      fixedSize: const Size(300, 50),
-                      backgroundColor: buttonColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                    ),
-                    child: const Text(
-                      "Try Gemini's API",
-                      style: TextStyle(
-                        fontSize: 20,
-                      ),
+                  child: const Text(
+                    "Try Gemini's API !",
+                    style: TextStyle(
+                      fontSize: 22,
+                      color: Colors.white,
                     ),
                   ),
-                  const SizedBox(height: 30),
-                ],
-              ),
+                ),
+                const SizedBox(height: 30),
+              ],
             ),
           ),
         ),

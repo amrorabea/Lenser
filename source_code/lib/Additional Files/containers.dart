@@ -7,39 +7,6 @@ import 'package:source_code/home.dart';
 import 'package:source_code/settings.dart';
 import 'package:source_code/signing/login.dart';
 
-// CIRCLES
-class CircleContainer extends StatelessWidget {
-  const CircleContainer({
-    super.key,
-    this.child,
-    this.width = 400,
-    this.height = 400,
-    this.radius = 400,
-    this.padding = 0,
-    this.backgroundColor = circles,
-  });
-
-  final double? width;
-  final double? height;
-  final double radius;
-  final double padding;
-  final Widget? child;
-  final Color? backgroundColor;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: width,
-      height: height,
-      padding: EdgeInsets.all(padding),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(radius),
-        color: backgroundColor,
-      ),
-    );
-  }
-}
-
 // APP BAR ==================================
 class appBAR extends StatelessWidget implements PreferredSizeWidget {
   const appBAR({super.key});
@@ -49,31 +16,17 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       // title: ,
       actions: [
-        const SizedBox(width: 5),
-        const Row(
-          children: [
-            Image(
-              image: AssetImage('images/objects.png'),
-            ),
-            Text(
-              "𝕝𝕖𝕟𝕤𝕖𝕣",
-              style: TextStyle(
-                fontSize: 30,
-              ),
-            ),
-          ],
-        ),
-        const Spacer(),
+        const SizedBox(width: 20),
         PopupMenuButton(
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
               Radius.circular(30.0),
             ),
           ),
-          color: const Color.fromRGBO(1, 141, 131, 0.7),
-          child: const Image(
-            width: 40,
-            image: AssetImage('images/option.png'),
+          child: Icon(
+            Icons.menu_rounded,
+            size: 50,
+            color: Colors.white,
           ),
           itemBuilder: (context) => [
             const PopupMenuItem(
@@ -151,19 +104,23 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const login(),
+                  builder: (context) => LoginScreen(),
                 ),
               );
             }
           },
         ),
-        const SizedBox(width: 5),
+        Spacer(),
+        const Image(
+          image: AssetImage('images/objects.png'),
+        ),
+        const SizedBox(width: 20),
       ],
       flexibleSpace: ClipRect(
         child: BackdropFilter(
           filter: ImageFilter.blur(
-            sigmaX: 8,
-            sigmaY: 20,
+            sigmaX: 0,
+            sigmaY: 0,
           ),
           child: Container(
             color: Colors.transparent,
@@ -171,7 +128,7 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       elevation: 0,
-      backgroundColor: Colors.blue.withAlpha(300),
+      backgroundColor: const Color.fromARGB(255, 10, 10, 10).withAlpha(300),
     );
   }
 

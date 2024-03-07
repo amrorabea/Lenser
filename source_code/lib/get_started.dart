@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:source_code/about.dart';
 import 'package:source_code/Additional%20Files/containers.dart';
 import 'package:source_code/Additional%20Files/colors.dart';
+import 'package:source_code/second.dart';
 
 class get_started extends StatelessWidget {
   const get_started({super.key});
@@ -15,27 +16,11 @@ class get_started extends StatelessWidget {
         body: Column(
           children: [
             const SizedBox(
-              height: 230,
-              child: Stack(
-                children: [
-                  Positioned(
-                    top: 1,
-                    right: 270,
-                    child: CircleContainer(
-                      height: 150,
-                      width: 150,
-                    ),
-                  ),
-                  Positioned(
-                    top: -50,
-                    right: 200,
-                    child: CircleContainer(
-                      height: 150,
-                      width: 150,
-                    ),
-                  ),
-                ],
-              ),
+              height: 100,
+            ),
+            const Image(
+              image: AssetImage('images/objects.png'),
+              height: 130,
             ),
             const Spacer(),
             const Text(
@@ -49,13 +34,26 @@ class get_started extends StatelessWidget {
             const SizedBox(
               height: 15,
             ),
-            const Text(
-              "𝕝𝕖𝕟𝕤𝕖𝕣",
-              style: TextStyle(
-                fontSize: 50,
-                fontWeight: FontWeight.bold,
-                color: fontColor,
-              ),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "L",
+                  style: TextStyle(
+                    fontSize: 50,
+                    fontWeight: FontWeight.bold,
+                    color: buttonColor,
+                  ),
+                ),
+                Text(
+                  "enser",
+                  style: TextStyle(
+                    fontSize: 50,
+                    fontWeight: FontWeight.bold,
+                    color: fontColor,
+                  ),
+                ),
+              ],
             ),
             const Spacer(),
             const SizedBox(
@@ -77,7 +75,7 @@ class get_started extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const aboutPage(),
+                    builder: (context) => const Second(),
                   ),
                 );
               }, // takes us to the home page
@@ -92,33 +90,11 @@ class get_started extends StatelessWidget {
                 "Get Started",
                 style: TextStyle(
                   fontSize: 20,
+                  color: Colors.white,
                 ),
               ),
             ),
             const Spacer(),
-            const SizedBox(
-              height: 120,
-              child: Stack(
-                children: [
-                  Positioned(
-                    bottom: -100,
-                    right: -40,
-                    child: CircleContainer(
-                      height: 150,
-                      width: 150,
-                    ),
-                  ),
-                  Positioned(
-                    bottom: -50,
-                    right: -100,
-                    child: CircleContainer(
-                      height: 150,
-                      width: 150,
-                    ),
-                  ),
-                ],
-              ),
-            ),
           ],
         ),
       ),

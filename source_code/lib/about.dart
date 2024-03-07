@@ -32,29 +32,6 @@ class _aboutPageState extends State<aboutPage> {
             padding: const EdgeInsets.only(top: 50),
             child: Column(
               children: [
-                const SizedBox(
-                  height: 100,
-                  child: Stack(
-                    children: [
-                      Positioned(
-                        top: -50,
-                        right: 290,
-                        child: CircleContainer(
-                          height: 150,
-                          width: 150,
-                        ),
-                      ),
-                      Positioned(
-                        top: -85,
-                        right: 220,
-                        child: CircleContainer(
-                          height: 150,
-                          width: 150,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
                 const Text(
                   "This project was created",
                   style: TextStyle(
