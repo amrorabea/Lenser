@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:source_code/Additional%20Files/colors.dart';
-import 'package:source_code/Additional%20Files/containers.dart';
+import 'package:source_code/components/colors.dart';
+import 'package:source_code/components/containers.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AboutPage extends StatefulWidget {

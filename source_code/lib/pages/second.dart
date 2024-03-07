@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:source_code/Additional%20Files/colors.dart';
-import 'package:source_code/Additional%20Files/containers.dart';
-import 'package:source_code/home.dart';
+import 'package:source_code/components/colors.dart';
+import 'package:source_code/components/containers.dart';
+import 'package:source_code/pages/home.dart';
 
 class Second extends StatelessWidget {
   const Second({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:source_code/Additional%20Files/colors.dart';
-import 'package:source_code/Additional%20Files/containers.dart';
-import 'package:source_code/second.dart';
+import 'package:source_code/components/colors.dart';
+import 'package:source_code/components/containers.dart';
+import 'package:source_code/pages/second.dart';
 
 class GetStarted extends StatelessWidget {
   const GetStarted({super.key});

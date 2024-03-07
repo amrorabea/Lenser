@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:source_code/Additional%20Files/colors.dart';
-import 'package:source_code/Additional%20Files/containers.dart';
-import 'package:source_code/chatbot.dart';
-import 'package:source_code/object_detection.dart';
+import 'package:source_code/components/colors.dart';
+import 'package:source_code/components/containers.dart';
+import 'package:source_code/pages/chatbot.dart';
+import 'package:source_code/pages/object_detection.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});

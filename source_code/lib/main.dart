@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:source_code/get_started.dart';
-import 'package:source_code/home.dart';
+import 'package:source_code/pages/get_started.dart';
+import 'package:source_code/pages/home.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

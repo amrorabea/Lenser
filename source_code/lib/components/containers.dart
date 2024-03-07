@@ -1,11 +1,11 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:source_code/Additional%20Files/colors.dart';
-import 'package:source_code/about.dart';
-import 'package:source_code/home.dart';
-import 'package:source_code/settings.dart';
-import 'package:source_code/signing/login.dart';
+import 'package:source_code/components/colors.dart';
+import 'package:source_code/pages/about.dart';
+import 'package:source_code/pages/home.dart';
+import 'package:source_code/pages/settings.dart';
+import 'package:source_code/pages/signing/login.dart';
 
 // APP BAR ==================================
 class appBAR extends StatelessWidget implements PreferredSizeWidget {
