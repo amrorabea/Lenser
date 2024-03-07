@@ -96,7 +96,6 @@ class _HomeState extends State<Home> {
                 ),
                 // =====================================
                 const SizedBox(height: 30),
-
                 const Padding(
                     padding: EdgeInsets.only(left: 30, right: 30),
                     child: Row(
@@ -119,9 +118,7 @@ class _HomeState extends State<Home> {
                         ),
                       ],
                     )),
-
                 //==================================
-
                 const SizedBox(height: 40),
                 const Padding(
                   padding: EdgeInsets.only(left: 3, right: 3),

@@ -1,18 +1,39 @@
-import 'package:flutter/material.dart';
-import 'package:source_code/get_started.dart';
+// ignore_for_file: must_be_immutable
 
-void main() {
-  runApp(const MyApp());
+import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:source_code/get_started.dart';
+import 'package:source_code/home.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  bool start;
+  final SharedPreferences prefs = await SharedPreferences.getInstance();
+  bool? flag = prefs.getBool('started');
+  if (flag == null) {
+    await prefs.setBool('started', true);
+    start = true;
+  } else {
+    start = false;
+  }
+  runApp(MyApp(start: start));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  bool? start;
+
+  MyApp({
+    super.key,
+    this.start,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: get_started(),
+      home: start == true
+          ? const GetStarted()
+          : const Home(), // dont forget to check if logged in first and then go to Home
     );
   }
 }

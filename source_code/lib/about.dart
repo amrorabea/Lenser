@@ -3,11 +3,11 @@ import 'package:source_code/Additional%20Files/colors.dart';
 import 'package:source_code/Additional%20Files/containers.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class aboutPage extends StatefulWidget {
-  const aboutPage({super.key});
+class AboutPage extends StatefulWidget {
+  const AboutPage({super.key});
 
   @override
-  State<aboutPage> createState() => _aboutPageState();
+  State<AboutPage> createState() => _AboutPageState();
 }
 
 const double sizeCategories = 19;
@@ -16,9 +16,9 @@ const double sizeWorkers = 23;
 const double paddingDividerLeft = 60;
 const double paddingDividerRight = 60;
 const double sizeMedia = 15;
-const double sizeMediaIcons = 50;
+const double sizeMediaIcons = 65;
 
-class _aboutPageState extends State<aboutPage> {
+class _AboutPageState extends State<AboutPage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -32,64 +32,57 @@ class _aboutPageState extends State<aboutPage> {
             padding: const EdgeInsets.only(top: 50),
             child: Column(
               children: [
+                const SizedBox(height: 12),
                 const Text(
-                  "This project was created",
+                  'About us',
                   style: TextStyle(
+                    fontWeight: FontWeight.bold,
                     fontSize: sizeCategories,
                     color: fontColor,
                   ),
                 ),
-                const Text(
-                  "by Modern Academy students",
-                  style: TextStyle(
-                    fontSize: sizeCategories,
-                    color: fontColor,
-                  ),
-                ),
-                const Text(
-                  "and used the programming languages",
-                  style: TextStyle(
-                    fontSize: sizeCategories,
-                    color: fontColor,
-                  ),
-                ),
-                const Text(
-                  "(Flutter, Python)",
-                  style: TextStyle(
-                    fontSize: sizeCategories,
-                    color: fontColor,
-                  ),
-                ),
-                const Text(
-                  "and the help of artificial intelligence,",
-                  style: TextStyle(
-                    fontSize: sizeCategories,
-                    color: fontColor,
-                  ),
-                ),
-                const Text(
-                  "which participated in it:",
-                  style: TextStyle(
-                    fontSize: sizeCategories,
-                    color: fontColor,
+                const Padding(
+                  padding: EdgeInsets.only(left: 25, top: 10),
+                  child: Row(
+                    // mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      GradientText(
+                        text: "L",
+                        gradient: LinearGradient(colors: [
+                          circles,
+                          Colors.white,
+                        ]),
+                        style: TextStyle(
+                            fontSize: 50, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        "enser",
+                        style: TextStyle(
+                          fontSize: 50,
+                          fontWeight: FontWeight.bold,
+                          color: fontColor,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 15,
+                ),
+                const Text(
+                  "This project was created by\nModern Academy students\nand used programming\n languages (Flutter, Python)\nand the help of artificial\nintelligence which\nparticipated in it :",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 24,
+                    color: fontColor,
+                  ),
                 ),
                 const Text(
                   "Ahmed Wael",
                   style: TextStyle(
                     fontSize: sizeWorkers,
-                    color: Colors.grey,
-                  ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(
-                      left: paddingDividerLeft, right: paddingDividerRight),
-                  child: Divider(
-                    color: fontColor,
-                    thickness: 2,
+                    fontWeight: FontWeight.bold,
+                    color: Color.fromARGB(255, 253, 253, 253),
                   ),
                 ),
                 const SizedBox(height: 10),
@@ -97,15 +90,8 @@ class _aboutPageState extends State<aboutPage> {
                   "Mahmoud Reda",
                   style: TextStyle(
                     fontSize: sizeWorkers,
-                    color: Colors.grey,
-                  ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(
-                      left: paddingDividerLeft, right: paddingDividerRight),
-                  child: Divider(
-                    color: fontColor,
-                    thickness: 2,
+                    fontWeight: FontWeight.bold,
+                    color: Color.fromARGB(255, 255, 255, 255),
                   ),
                 ),
                 const SizedBox(height: 10),
@@ -113,15 +99,8 @@ class _aboutPageState extends State<aboutPage> {
                   "Seif Ezz",
                   style: TextStyle(
                     fontSize: sizeWorkers,
-                    color: Colors.grey,
-                  ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(
-                      left: paddingDividerLeft, right: paddingDividerRight),
-                  child: Divider(
-                    color: fontColor,
-                    thickness: 2,
+                    fontWeight: FontWeight.bold,
+                    color: Color.fromARGB(255, 255, 255, 255),
                   ),
                 ),
                 const SizedBox(height: 10),
@@ -129,15 +108,8 @@ class _aboutPageState extends State<aboutPage> {
                   "Amro Rabea",
                   style: TextStyle(
                     fontSize: sizeWorkers,
-                    color: Colors.grey,
-                  ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(
-                      left: paddingDividerLeft, right: paddingDividerRight),
-                  child: Divider(
-                    color: fontColor,
-                    thickness: 2,
+                    fontWeight: FontWeight.bold,
+                    color: Color.fromARGB(255, 255, 255, 255),
                   ),
                 ),
                 const SizedBox(height: 10),
@@ -145,15 +117,8 @@ class _aboutPageState extends State<aboutPage> {
                   "Yousef Mohamed",
                   style: TextStyle(
                     fontSize: sizeWorkers,
-                    color: Colors.grey,
-                  ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(
-                      left: paddingDividerLeft, right: paddingDividerRight),
-                  child: Divider(
-                    color: fontColor,
-                    thickness: 2,
+                    fontWeight: FontWeight.bold,
+                    color: Color.fromARGB(255, 255, 255, 255),
                   ),
                 ),
                 const SizedBox(height: 10),
@@ -161,7 +126,8 @@ class _aboutPageState extends State<aboutPage> {
                   "Hossam Dyab",
                   style: TextStyle(
                     fontSize: sizeWorkers,
-                    color: Colors.grey,
+                    fontWeight: FontWeight.bold,
+                    color: Color.fromARGB(255, 255, 255, 255),
                   ),
                 ),
                 const Padding(
@@ -173,80 +139,111 @@ class _aboutPageState extends State<aboutPage> {
                 ),
                 const SizedBox(height: 10),
                 const Text(
-                  "You can contact us though",
+                  "For contact",
                   style: TextStyle(
                     fontSize: sizeTitles,
                     color: fontColor,
                   ),
                 ),
-                InkWell(
-                  onTap: () async {
-                    const url = "lenser5app@gmail.com";
-                    final Uri _url = Uri.parse(url);
-                    await launchUrl(_url, mode: LaunchMode.externalApplication);
-                  },
-                  child: const Image(
-                    width: sizeMediaIcons,
-                    image: AssetImage('images/gmail.png'),
-                  ),
-                ),
-                const Text(
-                  "Gmail",
-                  style: TextStyle(fontSize: sizeMedia, color: fontColor),
-                ),
-                InkWell(
-                  onTap: () async {
-                    const url = "https://google.com";
-                    final Uri _url = Uri.parse(url);
-                    await launchUrl(_url, mode: LaunchMode.externalApplication);
-                  },
-                  child: const Image(
-                    width: sizeMediaIcons - 5,
-                    image: AssetImage('images/facebook.png'),
-                  ),
-                ),
-                const Text(
-                  "Facebook",
-                  style: TextStyle(
-                    fontSize: sizeMedia,
-                    color: fontColor,
-                  ),
-                ),
-                InkWell(
-                  onTap: () async {
-                    const url = "https://google.com";
-                    final Uri _url = Uri.parse(url);
-                    await launchUrl(_url, mode: LaunchMode.externalApplication);
-                  },
-                  child: const Image(
-                    width: sizeMediaIcons,
-                    image: AssetImage('images/twitter.png'),
-                  ),
-                ),
-                const Text(
-                  "Twitter",
-                  style: TextStyle(
-                    fontSize: sizeMedia,
-                    color: fontColor,
-                  ),
-                ),
-                InkWell(
-                  onTap: () async {
-                    const url = "https://google.com";
-                    final Uri _url = Uri.parse(url);
-                    await launchUrl(_url, mode: LaunchMode.externalApplication);
-                  },
-                  child: const Image(
-                    width: sizeMediaIcons,
-                    image: AssetImage('images/github.png'),
-                  ),
-                ),
-                const Text(
-                  "GitHub",
-                  style: TextStyle(
-                    fontSize: sizeMedia,
-                    color: fontColor,
-                  ),
+                Row(
+                  children: [
+                    const Spacer(),
+                    Column(
+                      children: [
+                        InkWell(
+                          onTap: () async {
+                            const url = "lenser5app@gmail.com";
+                            final Uri url0 = Uri.parse(url);
+                            await launchUrl(url0,
+                                mode: LaunchMode.externalApplication);
+                          },
+                          child: const Image(
+                            width: sizeMediaIcons,
+                            image: AssetImage('images/gmail.png'),
+                            height: 60,
+                          ),
+                        ),
+                        const Text(
+                          "Gmail",
+                          style:
+                              TextStyle(fontSize: sizeMedia, color: fontColor),
+                        ),
+                      ],
+                    ),
+                    const Spacer(),
+                    Column(
+                      children: [
+                        InkWell(
+                          onTap: () async {
+                            const url = "https://google.com";
+                            final Uri url1 = Uri.parse(url);
+                            await launchUrl(url1,
+                                mode: LaunchMode.externalApplication);
+                          },
+                          child: const Image(
+                            width: sizeMediaIcons - 5,
+                            image: AssetImage('images/facebook.png'),
+                          ),
+                        ),
+                        const Text(
+                          "Facebook",
+                          style: TextStyle(
+                            fontSize: sizeMedia,
+                            color: fontColor,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const Spacer(),
+                    Column(
+                      children: [
+                        InkWell(
+                          onTap: () async {
+                            const url = "https://google.com";
+                            final Uri url2 = Uri.parse(url);
+                            await launchUrl(url2,
+                                mode: LaunchMode.externalApplication);
+                          },
+                          child: const Image(
+                            width: sizeMediaIcons,
+                            image: AssetImage('images/twitter.png'),
+                          ),
+                        ),
+                        const Text(
+                          "Twitter",
+                          style: TextStyle(
+                            fontSize: sizeMedia,
+                            color: fontColor,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const Spacer(),
+                    Column(
+                      children: [
+                        InkWell(
+                          onTap: () async {
+                            const url = "https://google.com";
+                            final Uri url3 = Uri.parse(url);
+                            await launchUrl(url3,
+                                mode: LaunchMode.externalApplication);
+                          },
+                          child: const Image(
+                            width: sizeMediaIcons,
+                            image: AssetImage('images/github.png'),
+                          ),
+                        ),
+                        const Text(
+                          "GitHub",
+                          style: TextStyle(
+                            fontSize: sizeMedia,
+                            color: fontColor,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const Spacer(),
+                  ],
                 ),
               ],
             ),

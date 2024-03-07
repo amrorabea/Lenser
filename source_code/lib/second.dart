@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:source_code/Additional%20Files/colors.dart';
+import 'package:source_code/Additional%20Files/containers.dart';
 import 'package:source_code/home.dart';
 
 class Second extends StatelessWidget {
@@ -74,13 +75,13 @@ class Second extends StatelessWidget {
             const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  "L",
-                  style: TextStyle(
-                    fontSize: 35,
-                    fontWeight: FontWeight.bold,
-                    color: buttonColor,
-                  ),
+                GradientText(
+                  text: "L",
+                  gradient: LinearGradient(colors: [
+                    circles,
+                    Colors.white,
+                  ]),
+                  style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
                 ),
                 Text(
                   "enser",
@@ -100,39 +101,12 @@ class Second extends StatelessWidget {
               ],
             ),
             const Text(
-              "that is designed to",
+              "that is designed to\nhelp you\nunderstand what\nyour camera is\nrecording using",
               style: TextStyle(
                 fontSize: 35,
                 color: fontColor,
               ),
-            ),
-            const Text(
-              "help you",
-              style: TextStyle(
-                fontSize: 35,
-                color: fontColor,
-              ),
-            ),
-            const Text(
-              "understand what",
-              style: TextStyle(
-                fontSize: 35,
-                color: fontColor,
-              ),
-            ),
-            const Text(
-              "your camera is",
-              style: TextStyle(
-                fontSize: 35,
-                color: fontColor,
-              ),
-            ),
-            const Text(
-              "recording using",
-              style: TextStyle(
-                fontSize: 35,
-                color: fontColor,
-              ),
+              textAlign: TextAlign.center,
             ),
             const Spacer(),
             const SizedBox(

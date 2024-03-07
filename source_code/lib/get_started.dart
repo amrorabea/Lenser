@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:source_code/about.dart';
-import 'package:source_code/Additional%20Files/containers.dart';
 import 'package:source_code/Additional%20Files/colors.dart';
+import 'package:source_code/Additional%20Files/containers.dart';
 import 'package:source_code/second.dart';
 
-class get_started extends StatelessWidget {
-  const get_started({super.key});
+class GetStarted extends StatelessWidget {
+  const GetStarted({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -37,13 +36,13 @@ class get_started extends StatelessWidget {
             const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  "L",
-                  style: TextStyle(
-                    fontSize: 50,
-                    fontWeight: FontWeight.bold,
-                    color: buttonColor,
-                  ),
+                GradientText(
+                  text: "L",
+                  gradient: LinearGradient(colors: [
+                    circles,
+                    Colors.white,
+                  ]),
+                  style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
                 ),
                 Text(
                   "enser",
@@ -60,7 +59,8 @@ class get_started extends StatelessWidget {
               height: 30,
             ),
             const Text(
-              "Not sure how to describe what you see\n                          in words?\n     Use your camera to detect it and\nsearch for it using AI & Google Gemini!",
+              "Not sure how to describe what you see\nin words?\nUse your camera to detect it and\nsearch for it using AI & Google Gemini!",
+              textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 15,
                 color: fontColor,

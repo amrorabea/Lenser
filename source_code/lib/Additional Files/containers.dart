@@ -97,7 +97,7 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const aboutPage(),
+                  builder: (context) => const AboutPage(),
                 ),
               );
             } else if (value == 4) {
@@ -134,4 +134,26 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize => const Size.fromHeight(60);
+}
+
+class GradientText extends StatelessWidget {
+  const GradientText({
+    Key? key,
+    required this.text,
+    this.style,
+    required this.gradient,
+  }) : super(key: key);
+  final String text;
+  final TextStyle? style;
+  final Gradient gradient;
+  @override
+  Widget build(BuildContext context) {
+    return ShaderMask(
+      blendMode: BlendMode.srcIn,
+      shaderCallback: (bounds) => gradient.createShader(
+        Rect.fromLTWH(0, 0, bounds.width, bounds.height),
+      ),
+      child: Text(text, style: style),
+    );
+  }
 }
