@@ -121,7 +121,7 @@ class _AboutPageState extends State<AboutPage> {
                   ),
                 ),
                 const Padding(
-                  padding: EdgeInsets.only(left: 0, right: 0),
+                  padding: EdgeInsets.only(left: 0, right: 0 , top:50),
                   child: Divider(
                     thickness: 2,
                   ),
