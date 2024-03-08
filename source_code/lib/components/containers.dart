@@ -6,6 +6,7 @@ import 'package:source_code/pages/about.dart';
 import 'package:source_code/pages/home.dart';
 import 'package:source_code/pages/settings.dart';
 import 'package:source_code/pages/signing/login.dart';
+import 'package:blur/blur.dart';
 
 // APP BAR ==================================
 class appBAR extends StatelessWidget implements PreferredSizeWidget {
@@ -16,17 +17,16 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       actions: [
         const SizedBox(width: 20),
+       
         PopupMenuButton(
           shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(
-              topRight: Radius.circular(30.0),
-              bottomRight: Radius.circular(30.0),
-            ),
+            borderRadius: BorderRadius.only(),
           ),
           offset: const Offset(-20, 0),
           constraints:
               const BoxConstraints.expand(width: 150, height: double.infinity),
-          color: const Color.fromRGBO(0, 198, 168, 0.8),
+              
+          color: Color.fromARGB(130, 0, 198, 168),
           child: const Icon(
             Icons.menu_rounded,
             size: 50,
@@ -34,13 +34,17 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
           itemBuilder: (context) => [
             const PopupMenuItem(
               value: 1,
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.home,
-                  ),
-                  Text('Home'),
-                ],
+              child: Padding(
+                padding: EdgeInsets.only(top: 50),
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.home,
+                      color: Colors.black,
+                    ),
+                    Text(' Home'),
+                  ],
+                ),
               ),
             ),
             const PopupMenuItem(
@@ -49,8 +53,9 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
                 children: [
                   Icon(
                     Icons.settings,
+                    color: Colors.black,
                   ),
-                  Text('Settings'),
+                  Text(' Settings'),
                 ],
               ),
             ),
@@ -60,8 +65,9 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
                 children: [
                   Icon(
                     Icons.info,
+                    color: Colors.black,
                   ),
-                  Text('About'),
+                  Text(' About'),
                 ],
               ),
             ),
@@ -71,8 +77,9 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
                 children: [
                   Icon(
                     Icons.logout,
+                    color: Colors.black,
                   ),
-                  Text('Logout'),
+                  Text(' Logout'),
                 ],
               ),
             ),
