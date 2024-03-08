@@ -52,7 +52,7 @@ class SignUp extends StatelessWidget {
                       ),
                     ]),
                     decoration: const InputDecoration(
-                      hintText: 'Full Name',
+                    
                       filled: true,
                       fillColor: Colors.white,
                       labelText: '    Full name',
@@ -91,7 +91,7 @@ class SignUp extends StatelessWidget {
                       ),
                     ]),
                     decoration: const InputDecoration(
-                      hintText: 'Enter Email',
+                     
                       labelText: '    Email',
                       filled: true,
                       fillColor: Colors.white,
@@ -122,7 +122,7 @@ class SignUp extends StatelessWidget {
                   child: const TextField(
                     obscureText: true,
                     decoration: InputDecoration(
-                      hintText: "    Password",
+                      labelText: "    Password",
                       hintStyle: TextStyle(color: buttonColor),
                       filled: true,
                       fillColor: Colors.white,
@@ -154,12 +154,12 @@ class SignUp extends StatelessWidget {
                   child: const TextField(
                     obscureText: true,
                     style: TextStyle(
-                      color: Color(0xFFbdc6cf),
+                      color: Color.fromARGB(255, 0, 0, 0),
                     ),
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.white,
-                      hintText: "    Confirm Password",
+                     labelText: "    Confirm Password",
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
                           width: 3,
