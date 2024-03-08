@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:provider/provider.dart';
 import 'package:source_code/components/colors.dart';
 import 'package:source_code/components/containers.dart';
+import 'package:source_code/components/theme.dart';
 import 'package:source_code/pages/chatbot.dart';
 import 'package:source_code/pages/object_detection.dart';
 
@@ -20,13 +22,12 @@ const double lenser = 35;
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: backGround,
-        appBar: const appBAR(),
-        extendBodyBehindAppBar: true,
-        body: Center(
+    return Scaffold(
+      appBar: const appBAR(),
+      extendBodyBehindAppBar: true,
+      body:
+          Consumer<UiProvider>(builder: (context, UiProvider notifier, child) {
+        return Center(
           child: Padding(
             padding: const EdgeInsets.only(top: 120),
             child: Column(
@@ -47,14 +48,15 @@ class _HomeState extends State<Home> {
                           Text(
                             "Object Detection",
                             style: TextStyle(
-                                color: fontColor,
                                 fontSize: 30,
                                 height: 2,
                                 fontWeight: FontWeight.bold),
                           ),
                           Text(
                             " AI model trained with deep \n learning to detect objects \n recorder by camera",
-                            style: TextStyle(color: fontColor, fontSize: 18),
+                            style: TextStyle(
+                              fontSize: 18,
+                            ),
                           ),
                         ],
                       ),
@@ -90,7 +92,6 @@ class _HomeState extends State<Home> {
                     "Try it !",
                     style: TextStyle(
                       fontSize: 22,
-                      color: Colors.white,
                     ),
                   ),
                 ),
@@ -103,17 +104,17 @@ class _HomeState extends State<Home> {
                         Expanded(
                           child: Divider(
                             thickness: 2,
-                            color: fontColor,
                           ),
                         ),
                         Text(
                           "     And     ",
-                          style: TextStyle(color: Colors.white, fontSize: 18),
+                          style: TextStyle(
+                            fontSize: 18,
+                          ),
                         ),
                         Expanded(
                           child: Divider(
                             thickness: 2,
-                            color: fontColor,
                           ),
                         ),
                       ],
@@ -129,7 +130,6 @@ class _HomeState extends State<Home> {
                           Text(
                             "Gemini API",
                             style: TextStyle(
-                                color: Colors.white,
                                 fontSize: 30,
                                 height: 2,
                                 fontWeight: FontWeight.bold),
@@ -138,7 +138,7 @@ class _HomeState extends State<Home> {
                             padding: EdgeInsets.all(8.0),
                             child: Text(
                               " With the help of\n Gemini,\n You can now send the\n image to Gemini, and it\n will response to you\n with additional info on\n the detected objects ",
-                              style: TextStyle(color: fontColor, fontSize: 18),
+                              style: TextStyle(fontSize: 18),
                             ),
                           ),
                         ],
@@ -171,7 +171,6 @@ class _HomeState extends State<Home> {
                     "Try Gemini's API !",
                     style: TextStyle(
                       fontSize: 22,
-                      color: Colors.white,
                     ),
                   ),
                 ),
@@ -179,8 +178,8 @@ class _HomeState extends State<Home> {
               ],
             ),
           ),
-        ),
-      ),
+        );
+      }),
     );
   }
 }

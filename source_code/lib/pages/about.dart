@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:source_code/components/colors.dart';
 import 'package:source_code/components/containers.dart';
+import 'package:source_code/components/theme.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AboutPage extends StatefulWidget {
@@ -21,14 +23,12 @@ const double sizeMediaIcons = 65;
 class _AboutPageState extends State<AboutPage> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: backGround,
-        appBar: const appBAR(),
-        extendBodyBehindAppBar: true,
-        body: SingleChildScrollView(
-          child: Padding(
+    return Scaffold(
+      appBar: const appBAR(),
+      extendBodyBehindAppBar: true,
+      body: Consumer<UiProvider>(
+        builder: (context, UiProvider notifier, child) {
+          return Padding(
             padding: const EdgeInsets.only(top: 50),
             child: Column(
               children: [
@@ -38,7 +38,6 @@ class _AboutPageState extends State<AboutPage> {
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: sizeCategories,
-                    color: fontColor,
                   ),
                 ),
                 const Padding(
@@ -49,7 +48,7 @@ class _AboutPageState extends State<AboutPage> {
                         text: "L",
                         gradient: LinearGradient(colors: [
                           circles,
-                          Colors.white,
+                          Colors.black,
                         ]),
                         style: TextStyle(
                             fontSize: 50, fontWeight: FontWeight.bold),
@@ -59,7 +58,6 @@ class _AboutPageState extends State<AboutPage> {
                         style: TextStyle(
                           fontSize: 50,
                           fontWeight: FontWeight.bold,
-                          color: fontColor,
                         ),
                       ),
                     ],
@@ -73,7 +71,6 @@ class _AboutPageState extends State<AboutPage> {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 24,
-                    color: fontColor,
                   ),
                 ),
                 const Text(
@@ -81,7 +78,6 @@ class _AboutPageState extends State<AboutPage> {
                   style: TextStyle(
                     fontSize: sizeWorkers,
                     fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 253, 253, 253),
                   ),
                 ),
                 const SizedBox(height: 10),
@@ -90,7 +86,6 @@ class _AboutPageState extends State<AboutPage> {
                   style: TextStyle(
                     fontSize: sizeWorkers,
                     fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 255, 255, 255),
                   ),
                 ),
                 const SizedBox(height: 10),
@@ -99,7 +94,6 @@ class _AboutPageState extends State<AboutPage> {
                   style: TextStyle(
                     fontSize: sizeWorkers,
                     fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 255, 255, 255),
                   ),
                 ),
                 const SizedBox(height: 10),
@@ -108,7 +102,6 @@ class _AboutPageState extends State<AboutPage> {
                   style: TextStyle(
                     fontSize: sizeWorkers,
                     fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 255, 255, 255),
                   ),
                 ),
                 const SizedBox(height: 10),
@@ -117,7 +110,6 @@ class _AboutPageState extends State<AboutPage> {
                   style: TextStyle(
                     fontSize: sizeWorkers,
                     fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 255, 255, 255),
                   ),
                 ),
                 const SizedBox(height: 10),
@@ -126,13 +118,11 @@ class _AboutPageState extends State<AboutPage> {
                   style: TextStyle(
                     fontSize: sizeWorkers,
                     fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 255, 255, 255),
                   ),
                 ),
                 const Padding(
                   padding: EdgeInsets.only(left: 0, right: 0),
                   child: Divider(
-                    color: fontColor,
                     thickness: 2,
                   ),
                 ),
@@ -141,7 +131,6 @@ class _AboutPageState extends State<AboutPage> {
                   "For contact",
                   style: TextStyle(
                     fontSize: sizeTitles,
-                    color: fontColor,
                   ),
                 ),
                 Row(
@@ -164,8 +153,7 @@ class _AboutPageState extends State<AboutPage> {
                         ),
                         const Text(
                           "Gmail",
-                          style:
-                              TextStyle(fontSize: sizeMedia, color: fontColor),
+                          style: TextStyle(fontSize: sizeMedia),
                         ),
                       ],
                     ),
@@ -188,7 +176,6 @@ class _AboutPageState extends State<AboutPage> {
                           "Facebook",
                           style: TextStyle(
                             fontSize: sizeMedia,
-                            color: fontColor,
                           ),
                         ),
                       ],
@@ -212,7 +199,6 @@ class _AboutPageState extends State<AboutPage> {
                           "Twitter",
                           style: TextStyle(
                             fontSize: sizeMedia,
-                            color: fontColor,
                           ),
                         ),
                       ],
@@ -236,7 +222,6 @@ class _AboutPageState extends State<AboutPage> {
                           "GitHub",
                           style: TextStyle(
                             fontSize: sizeMedia,
-                            color: fontColor,
                           ),
                         ),
                       ],
@@ -246,8 +231,8 @@ class _AboutPageState extends State<AboutPage> {
                 ),
               ],
             ),
-          ),
-        ),
+          );
+        },
       ),
     );
   }

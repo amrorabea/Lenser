@@ -14,7 +14,6 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      // title: ,
       actions: [
         const SizedBox(width: 20),
         PopupMenuButton(
@@ -31,7 +30,6 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
           child: const Icon(
             Icons.menu_rounded,
             size: 50,
-            color: Colors.white,
           ),
           itemBuilder: (context) => [
             const PopupMenuItem(
@@ -40,7 +38,6 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
                 children: [
                   Icon(
                     Icons.home,
-                    color: Colors.black,
                   ),
                   Text('Home'),
                 ],
@@ -52,7 +49,6 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
                 children: [
                   Icon(
                     Icons.settings,
-                    color: Colors.black,
                   ),
                   Text('Settings'),
                 ],
@@ -64,7 +60,6 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
                 children: [
                   Icon(
                     Icons.info,
-                    color: Colors.black,
                   ),
                   Text('About'),
                 ],
@@ -76,7 +71,6 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
                 children: [
                   Icon(
                     Icons.logout,
-                    color: Colors.black,
                   ),
                   Text('Logout'),
                 ],
@@ -85,37 +79,37 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
           ],
           onSelected: (value) {
             if (value == 1) {
-              Navigator.push(
+              Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
                   builder: (context) => const Home(),
                 ),
               );
             } else if (value == 2) {
-              Navigator.push(
+              Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
                   builder: (context) => const Settings(),
                 ),
               );
             } else if (value == 3) {
-              Navigator.push(
+              Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
                   builder: (context) => const AboutPage(),
                 ),
               );
             } else if (value == 4) {
-              Navigator.push(
+              Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => LoginScreen(),
+                  builder: (context) => const LoginScreen(),
                 ),
               );
             }
           },
         ),
-        Spacer(),
+        const Spacer(),
         const Image(
           image: AssetImage('images/objects.png'),
         ),
@@ -133,7 +127,7 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       elevation: 0,
-      backgroundColor: const Color.fromARGB(255, 10, 10, 10).withAlpha(300),
+      backgroundColor: Theme.of(context).colorScheme.secondary.withAlpha(300),
     );
   }
 
@@ -143,11 +137,11 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
 
 class GradientText extends StatelessWidget {
   const GradientText({
-    Key? key,
+    super.key,
     required this.text,
     this.style,
     required this.gradient,
-  }) : super(key: key);
+  });
   final String text;
   final TextStyle? style;
   final Gradient gradient;

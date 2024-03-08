@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:source_code/components/colors.dart';
 import 'package:source_code/components/containers.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:source_code/components/theme.dart';
+import 'package:source_code/pages/about.dart';
 
 class Settings extends StatefulWidget {
   const Settings({super.key});
@@ -10,26 +12,20 @@ class Settings extends StatefulWidget {
   State<Settings> createState() => _SettingsState();
 }
 
+const double currentFont = 18;
 const double sizeCategories = 19;
-const double sizeTitles = 25;
-const double sizeWorkers = 23;
-const double paddingDividerLeft = 60;
-const double paddingDividerRight = 60;
-const double sizeMedia = 15;
-const double sizeMediaIcons = 65;
-bool mode = false;
+bool swit = false;
+String _selectedView = 'Card';
 
 class _SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: backGround,
-        appBar: const appBAR(),
-        extendBodyBehindAppBar: true,
-        body: SingleChildScrollView(
-          child: Padding(
+    return Scaffold(
+      appBar: const appBAR(),
+      extendBodyBehindAppBar: true,
+      body: Consumer<UiProvider>(
+        builder: (context, UiProvider notifier, child) {
+          return Padding(
             padding: const EdgeInsets.only(top: 45),
             child: Column(
               children: [
@@ -39,50 +35,84 @@ class _SettingsState extends State<Settings> {
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: sizeCategories,
-                    color: fontColor,
                   ),
                 ),
                 const SizedBox(height: 60),
-                Row(
-                  children: [
-                    const Spacer(),
-                    const Text(
-                      "Dark mode",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    const Spacer(flex: 10),
-                    Theme(
-                      data: ThemeData(
-                        useMaterial3: true,
-                      ).copyWith(
-                        colorScheme: Theme.of(context)
-                            .colorScheme
-                            .copyWith(outline: Colors.white),
+                ListTile(
+                  leading: const Icon(Icons.dark_mode),
+                  title: const Text("Dark mode"),
+                  trailing: Switch(
+                      activeTrackColor: Colors.black,
+                      activeColor: buttonColor,
+                      inactiveThumbColor: Colors.grey,
+                      inactiveTrackColor: Colors.white,
+                      value: notifier.isDark,
+                      onChanged: (value) => notifier.changeTheme()),
+                ),
+                const SizedBox(height: 10),
+                // =================================================================== FONT SIZE
+                ListTile(
+                  leading: const Icon(Icons.abc_rounded),
+                  title: const Text("Font size"),
+                  trailing: PopupMenuButton(
+                    onSelected: (value) =>
+                        setState(() => _selectedView = value),
+                    itemBuilder: (_) => [
+                      CheckedPopupMenuItem(
+                        checked: _selectedView == 'Large',
+                        value: 'Large',
+                        child: const Text('Large'),
                       ),
-                      child: Switch(
-                          value: mode,
-                          activeTrackColor: backGround,
-                          inactiveTrackColor: backGround,
-                          inactiveThumbColor: Colors.grey,
-                          activeColor: buttonColor,
-                          onChanged: (bool value) {
-                            // This is called when the user toggles the switch.
-                            setState(() {
-                              mode = value;
-                            });
-                          }),
+                      CheckedPopupMenuItem(
+                        checked: _selectedView == 'Medium',
+                        value: 'Medium',
+                        child: const Text('Medium'),
+                      ),
+                      CheckedPopupMenuItem(
+                        checked: _selectedView == 'Small',
+                        value: 'Small',
+                        child: const Text('Small'),
+                      ),
+                    ],
+                    child: const Icon(
+                      Icons.keyboard_arrow_down_rounded,
+                      size: 35,
+                      color: buttonColor,
                     ),
-                    const Spacer(),
-                  ],
+                  ),
+                ),
+                const SizedBox(height: 10),
+                // =================================================================== VOICE
+                ListTile(
+                  leading: const Icon(Icons.keyboard_voice_outlined),
+                  title: const Text("Voice"),
+                  trailing: PopupMenuButton(
+                    onSelected: (value) =>
+                        setState(() => _selectedView = value),
+                    itemBuilder: (_) => [
+                      CheckedPopupMenuItem(
+                        checked: _selectedView == 'Male',
+                        value: 'Male',
+                        child: const Text('Male'),
+                      ),
+                      CheckedPopupMenuItem(
+                        checked: _selectedView == 'Female',
+                        value: 'Female',
+                        child: const Text('Female'),
+                      ),
+                    ],
+                    child: const Icon(
+                      Icons.keyboard_arrow_down_rounded,
+                      size: 35,
+                      color: buttonColor,
+                    ),
+                  ),
                 ),
                 const SizedBox(height: 10),
               ],
             ),
-          ),
-        ),
+          );
+        },
       ),
     );
   }
