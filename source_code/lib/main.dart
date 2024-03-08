@@ -6,6 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:source_code/components/theme.dart';
 import 'package:source_code/pages/get_started.dart';
 import 'package:source_code/pages/home.dart';
+import 'package:source_code/pages/signing/signup.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -47,7 +48,7 @@ class MyApp extends StatelessWidget {
             //   useMaterial3: true,
             // ),
             theme: notifier.lightTheme,
-            home: start == true ? const GetStarted() : const Home(),
+            home: const SignUp(),
           );
         },
       ),
