@@ -7,7 +7,7 @@
 > Contains the **flutter code** and all **required assets**.
 
 # Videos we have to watch:
-> integrate **Gemini's API**: [Tutorial](https://ai.google.dev/tutorials/dart_quickstart)
+> integrate **Gemini's API**: [Tutorial](https://ai.google.dev/tutorials/dart_quickstart), [Video](https://www.youtube.com/watch?v=xEpNVxskOuM).
 > 
 > Use **OpenCV code in flutter**: [Video](https://www.youtube.com/watch?v=wGH_KWpaAVM)
 >
