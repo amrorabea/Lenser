@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
+import 'package:source_code/components/containers.dart';
 import 'package:provider/provider.dart';
-import 'package:source_code/components/colors.dart';
-import 'package:source_code/components/theme.dart';
 import 'package:source_code/pages/signing/signup.dart';
 
 void main() {
@@ -30,7 +29,6 @@ class LoginScreen extends StatelessWidget {
                   "Welcome Back!",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
                 ),
-
                 Padding(
                   padding: const EdgeInsets.only(left: 30, right: 30, top: 50),
                   child: TextFormField(
@@ -44,7 +42,6 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ]),
                     decoration: const InputDecoration(
-                     
                       labelText: '    Email',
                       filled: true,
                       fillColor: Colors.white,
@@ -71,11 +68,12 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 30, right: 30, top: 20 , bottom: 10),
+                  padding: const EdgeInsets.only(
+                      left: 30, right: 30, top: 20, bottom: 10),
                   child: const TextField(
                     obscureText: true,
                     decoration: InputDecoration(
-                     labelText: "    Password",
+                      labelText: "    Password",
                       hintStyle: TextStyle(color: buttonColor),
                       filled: true,
                       fillColor: Colors.white,
@@ -102,10 +100,9 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-
                 Padding(
                   padding: const EdgeInsets.only(left: 30, right: 30, top: 10),
-               child: Divider(thickness: 2),
+                  child: Divider(thickness: 2),
                 ),
                 const SizedBox(height: 20),
                 ElevatedButton(
@@ -122,9 +119,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                   child: const Text(
                     "Login",
-                    
                     style: TextStyle(
-                    
                       fontSize: 25,
                     ),
                   ),
@@ -138,7 +133,6 @@ class LoginScreen extends StatelessWidget {
                     const Text(
                       "Dont'n Have An Account?",
                       style: TextStyle(
-                        
                         fontSize: 15,
                       ),
                     ),

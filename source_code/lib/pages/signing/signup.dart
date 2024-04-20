@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:form_field_validator/form_field_validator.dart';
-import 'package:flutter/foundation.dart';
 import 'package:provider/provider.dart';
-import 'package:source_code/components/colors.dart';
-import 'package:source_code/components/theme.dart';
+import 'package:source_code/components/containers.dart';
 import 'package:source_code/pages/signing/login.dart';
 
 void main() {
@@ -38,7 +35,7 @@ class SignUp extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 15),
                 ),
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
                 Padding(
                   padding: const EdgeInsets.only(left: 30, right: 30, top: 20),
                   child: TextFormField(
@@ -52,7 +49,6 @@ class SignUp extends StatelessWidget {
                       ),
                     ]),
                     decoration: const InputDecoration(
-                    
                       filled: true,
                       fillColor: Colors.white,
                       labelText: '    Full name',
@@ -91,7 +87,6 @@ class SignUp extends StatelessWidget {
                       ),
                     ]),
                     decoration: const InputDecoration(
-                     
                       labelText: '    Email',
                       filled: true,
                       fillColor: Colors.white,
@@ -117,9 +112,9 @@ class SignUp extends StatelessWidget {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 30, right: 30, top: 20),
-                  child: const TextField(
+                const Padding(
+                  padding: EdgeInsets.only(left: 30, right: 30, top: 20),
+                  child: TextField(
                     obscureText: true,
                     decoration: InputDecoration(
                       labelText: "    Password",
@@ -149,9 +144,9 @@ class SignUp extends StatelessWidget {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 30, right: 30, top: 20),
-                  child: const TextField(
+                const Padding(
+                  padding: EdgeInsets.only(left: 30, right: 30, top: 20),
+                  child: TextField(
                     obscureText: true,
                     style: TextStyle(
                       color: Color.fromARGB(255, 0, 0, 0),
@@ -159,7 +154,7 @@ class SignUp extends StatelessWidget {
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.white,
-                     labelText: "    Confirm Password",
+                      labelText: "    Confirm Password",
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
                           width: 3,

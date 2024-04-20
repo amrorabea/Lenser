@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:source_code/components/colors.dart';
 import 'package:source_code/components/containers.dart';
 import 'package:source_code/pages/home.dart';
 

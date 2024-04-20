@@ -1,13 +1,83 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:source_code/components/colors.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:source_code/pages/about.dart';
 import 'package:source_code/pages/home.dart';
 import 'package:source_code/pages/settings.dart';
 import 'package:source_code/pages/signing/login.dart';
-import 'package:blur/blur.dart';
 
+// ==========================================
+// COLORS ===================================
+
+const Color circles = Color.fromRGBO(0, 255, 240, 0.4);
+const Color backGround = Color.fromRGBO(23, 23, 23, 1);
+const Color buttonColor = Color.fromRGBO(0, 198, 186, 1);
+const Color fontColor = Colors.white;
+
+const double smallFont = 12;
+const double mediumFont = 18;
+const double bigFont = 19;
+
+double currentFont = mediumFont;
+
+const Color blackFont = Colors.black;
+const Color whiteFont = Colors.white;
+const Color blackBackground = Colors.black;
+const Color whiteBackground = Colors.white;
+
+Color currnetFontColor = blackFont;
+Color currentBackgroundColor = whiteBackground;
+
+// ==========================================
+// THEMES ===================================
+
+class UiProvider extends ChangeNotifier {
+  bool _isDark = false;
+  bool get isDark => _isDark;
+
+  late SharedPreferences storage;
+
+  final darkTheme = ThemeData(
+    primaryColor: Colors.black,
+    brightness: Brightness.dark,
+    primaryColorDark: Colors.black,
+    appBarTheme: const AppBarTheme(
+      iconTheme: IconThemeData(color: Colors.white),
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        foregroundColor: Colors.white,
+      ),
+    ),
+  );
+
+  final lightTheme = ThemeData(
+    primaryColor: Colors.white,
+    brightness: Brightness.light,
+    primaryColorDark: Colors.white,
+    appBarTheme: const AppBarTheme(
+      iconTheme: IconThemeData(color: Colors.black),
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        foregroundColor: Colors.black,
+      ),
+    ),
+  );
+  changeTheme() {
+    _isDark = !isDark;
+    storage.setBool("isDark", _isDark);
+    notifyListeners();
+  }
+
+  init() async {
+    storage = await SharedPreferences.getInstance();
+    _isDark = storage.getBool("isDark") ?? false;
+    notifyListeners();
+  }
+}
+
+// ==========================================
 // APP BAR ==================================
 class appBAR extends StatelessWidget implements PreferredSizeWidget {
   const appBAR({super.key});
@@ -17,7 +87,6 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       actions: [
         const SizedBox(width: 20),
-       
         PopupMenuButton(
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(),
@@ -25,7 +94,6 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
           offset: const Offset(-20, 0),
           constraints:
               const BoxConstraints.expand(width: 150, height: double.infinity),
-              
           color: Color.fromARGB(130, 0, 198, 168),
           child: const Icon(
             Icons.menu_rounded,

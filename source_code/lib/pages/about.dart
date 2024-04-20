@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:source_code/components/colors.dart';
 import 'package:source_code/components/containers.dart';
-import 'package:source_code/components/theme.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AboutPage extends StatefulWidget {
@@ -121,7 +119,7 @@ class _AboutPageState extends State<AboutPage> {
                   ),
                 ),
                 const Padding(
-                  padding: EdgeInsets.only(left: 0, right: 0 , top:50),
+                  padding: EdgeInsets.only(left: 0, right: 0, top: 50),
                   child: Divider(
                     thickness: 2,
                   ),

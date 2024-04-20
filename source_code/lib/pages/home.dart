@@ -2,9 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
-import 'package:source_code/components/colors.dart';
 import 'package:source_code/components/containers.dart';
-import 'package:source_code/components/theme.dart';
 import 'package:source_code/pages/chatbot.dart';
 import 'package:source_code/pages/object_detection.dart';
 
