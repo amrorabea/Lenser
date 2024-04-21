@@ -21,7 +21,7 @@ class _HomeState extends State<Home> {
           Consumer<UiProvider>(builder: (context, UiProvider notifier, child) {
         return Center(
           child: Padding(
-            padding: const EdgeInsets.only(top: 120),
+            padding: const EdgeInsets.only(top: 85),
             child: Column(
               children: [
                 const SizedBox(

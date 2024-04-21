@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:form_field_validator/form_field_validator.dart';
 import 'package:provider/provider.dart';
 import 'package:source_code/Auth/Auth.dart';
 import 'package:source_code/components/containers.dart';
 import 'package:source_code/pages/signing/login.dart';
 
 void main() {
-  runApp(SignUp());
+  runApp(signupScreen());
 }
 
-class SignUp extends StatelessWidget {
-  SignUp({super.key});
+class signupScreen extends StatelessWidget {
+  signupScreen({super.key});
 
   get kPrimaryColor => null;
   get validator => null;
@@ -27,6 +26,7 @@ class SignUp extends StatelessWidget {
         return Scaffold(
           resizeToAvoidBottomInset: false,
           body: Form(
+            key: _Key,
             child: Center(
               child: Column(
                 children: [
@@ -41,49 +41,9 @@ class SignUp extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 15),
                   ),
-                  const SizedBox(height: 30),
                   Padding(
                     padding:
-                        const EdgeInsets.only(left: 30, right: 30, top: 20),
-                    child: TextFormField(
-                      validator: MultiValidator([
-                        RequiredValidator(
-                          errorText: 'Enter Full name',
-                        ),
-                        MinLengthValidator(
-                          3,
-                          errorText: 'Minimum 3 charecter filled name',
-                        ),
-                      ]),
-                      decoration: const InputDecoration(
-                        filled: true,
-                        fillColor: Colors.white,
-                        labelText: '    Full name',
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            width: 3,
-                            color: buttonColor,
-                          ),
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(15),
-                          ),
-                        ),
-                        labelStyle: TextStyle(
-                          color: buttonColor,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        errorStyle: TextStyle(fontSize: 18.0),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(15.0),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        const EdgeInsets.only(left: 30, right: 30, top: 20),
+                        const EdgeInsets.only(left: 30, right: 30, top: 50),
                     child: TextFormField(
                       controller: controllerEmail,
                       validator: (value) {
@@ -119,7 +79,8 @@ class SignUp extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: 30, right: 30, top: 20),
+                    padding: const EdgeInsets.only(
+                        left: 30, right: 30, top: 20, bottom: 10),
                     child: TextFormField(
                       controller: controllerpassword,
                       validator: (value) {
@@ -129,7 +90,7 @@ class SignUp extends StatelessWidget {
                         return null;
                       },
                       obscureText: true,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: "    Password",
                         hintStyle: TextStyle(color: buttonColor),
                         filled: true,
@@ -157,50 +118,19 @@ class SignUp extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Padding(
+                  const Padding(
                     padding:
-                        const EdgeInsets.only(left: 30, right: 30, top: 20),
-                    child: TextFormField(
-                      obscureText: true,
-                      style: const TextStyle(
-                        color: Color.fromARGB(255, 0, 0, 0),
-                      ),
-                      decoration: const InputDecoration(
-                        filled: true,
-                        fillColor: Colors.white,
-                        labelText: "    Confirm Password",
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            width: 3,
-                            color: buttonColor,
-                          ),
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(15),
-                          ),
-                        ),
-                        labelStyle: TextStyle(
-                          color: buttonColor,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        hintStyle: TextStyle(color: buttonColor),
-                        errorStyle: TextStyle(fontSize: 18.0),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(15.0),
-                          ),
-                        ),
-                      ),
-                    ),
+                        const EdgeInsets.only(left: 30, right: 30, top: 10),
+                    child: Divider(thickness: 2),
                   ),
                   const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed: () {
-                      // CHECK INFO HERE AND STORE IT IN THE FIREBASE
                       if (_Key.currentState!.validate()) {
                         auth.createUserWithEmailAndPassword(
-                          controllerEmail.text,
-                          controllerpassword.text,
-                        );
+                            controllerEmail.text,
+                            controllerpassword.text,
+                            context);
                       }
                     },
                     style: ElevatedButton.styleFrom(
@@ -212,7 +142,7 @@ class SignUp extends StatelessWidget {
                       foregroundColor: Colors.white,
                     ),
                     child: const Text(
-                      "Sign up",
+                      "Sign Up",
                       style: TextStyle(
                         fontSize: 25,
                       ),
@@ -225,7 +155,7 @@ class SignUp extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Text(
-                        "already have an account?",
+                        "Already have an account?",
                         style: TextStyle(
                           fontSize: 15,
                         ),
@@ -235,12 +165,12 @@ class SignUp extends StatelessWidget {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => LoginScreen(),
+                              builder: (context) => loginScreen(),
                             ),
                           );
                         },
                         child: const Text(
-                          " Sign in",
+                          " Login",
                           style: TextStyle(
                             fontSize: 15,
                             color: buttonColor,

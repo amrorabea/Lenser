@@ -1,10 +1,12 @@
 import 'dart:ui';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:source_code/pages/about.dart';
 import 'package:source_code/pages/home.dart';
 import 'package:source_code/pages/settings.dart';
 import 'package:source_code/pages/signing/login.dart';
+import 'package:source_code/pages/signing/signup.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class text extends StatelessWidget {
@@ -255,11 +257,10 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
                 ),
               );
             } else if (value == 4) {
+              FirebaseAuth.instance.signOut();
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(
-                  builder: (context) =>  LoginScreen(),
-                ),
+                MaterialPageRoute(builder: (context) => loginScreen()),
               );
             }
           },

@@ -5,11 +5,11 @@ import 'package:source_code/components/containers.dart';
 import 'package:source_code/pages/signing/signup.dart';
 
 void main() {
-  runApp(SignUp());
+  runApp(signupScreen());
 }
 
-class LoginScreen extends StatelessWidget {
-  LoginScreen({super.key});
+class loginScreen extends StatelessWidget {
+  loginScreen({super.key});
 
   get kPrimaryColor => null;
   get validator => null;
@@ -120,10 +120,8 @@ class LoginScreen extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {
                       if (_Key.currentState!.validate()) {
-                        auth.createUserWithEmailAndPassword(
-                          controllerEmail.text,
-                          controllerpassword.text,
-                        );
+                        auth.loginFirebase(controllerEmail.text,
+                            controllerpassword.text, context);
                       }
                     },
                     style: ElevatedButton.styleFrom(
@@ -148,7 +146,7 @@ class LoginScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Text(
-                        "Dont'n Have An Account?",
+                        "Don't have an account?",
                         style: TextStyle(
                           fontSize: 15,
                         ),
@@ -158,7 +156,7 @@ class LoginScreen extends StatelessWidget {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => SignUp(),
+                              builder: (context) => signupScreen(),
                             ),
                           );
                         },
@@ -169,6 +167,18 @@ class LoginScreen extends StatelessWidget {
                             color: buttonColor,
                           ),
                         ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      text(txt: " or ", size: 15),
+                      GestureDetector(
+                        onTap: () {
+                          auth.guest(context);
+                        },
+                        child: text(txt: "Guest", size: 15, color: buttonColor),
                       ),
                     ],
                   ),
