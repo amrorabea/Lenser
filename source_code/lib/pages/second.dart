@@ -23,94 +23,63 @@ class Second extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                          builder: (context) => const Home(),
-                        ),
+                        MaterialPageRoute(builder: (context) => const Home()),
                       );
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color.fromRGBO(0, 0, 0, 0),
-                    ),
-                    child: const Icon(
-                      Icons.exit_to_app,
-                      size: 35,
-                      color: Colors.white,
-                    ),
+                        backgroundColor: const Color.fromRGBO(0, 0, 0, 0)),
+                    child: const Icon(Icons.exit_to_app,
+                        size: 35, color: Colors.white),
                   ),
                 ],
               ),
             ),
             const Spacer(),
-            const Text(
-              "Welcome back,",
-              style: TextStyle(
-                fontSize: 40,
-                fontWeight: FontWeight.bold,
-                color: fontColor,
-              ),
+            text(
+              txt: "Welcome!",
+              size: 40,
+              weight: FontWeight.bold,
+              color: fontColor,
             ),
-            const Text(
-              "USERNAME !",
-              style: TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-                color: fontColor,
-              ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            const Text(
-              "We start from here",
-              style: TextStyle(
-                fontSize: 25,
-                color: fontColor,
-              ),
+            const SizedBox(height: 10),
+            text(
+              txt: "We start from here",
+              size: 25,
+              weight: FontWeight.normal,
+              color: fontColor,
             ),
             const Spacer(),
-            const SizedBox(
-              height: 15,
-            ),
-            const Row(
+            const SizedBox(height: 15),
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                GradientText(
+                const GradientText(
                   text: "L",
-                  gradient: LinearGradient(colors: [
-                    circles,
-                    Colors.white,
-                  ]),
+                  gradient: LinearGradient(
+                    colors: [
+                      circles,
+                      Colors.white,
+                    ],
+                  ),
                   style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
                 ),
-                Text(
-                  "enser",
-                  style: TextStyle(
-                    fontSize: 35,
-                    fontWeight: FontWeight.bold,
-                    color: fontColor,
-                  ),
-                ),
-                Text(
-                  " is an app",
-                  style: TextStyle(
-                    fontSize: 35,
-                    color: fontColor,
-                  ),
+                text(txt: "enser", size: 50, weight: FontWeight.bold),
+                text(
+                  txt: " is an app",
+                  size: 35,
+                  color: fontColor,
                 ),
               ],
             ),
-            const Text(
-              "that is designed to\nhelp you\nunderstand what\nyour camera is\nrecording using",
-              style: TextStyle(
-                fontSize: 35,
-                color: fontColor,
-              ),
-              textAlign: TextAlign.center,
+            text(
+              txt:
+                  "that is designed to\nhelp you\nunderstand what\nyour camera is\nrecording using",
+              size: 35,
+              color: fontColor,
+              align: TextAlign.center,
             ),
             const Spacer(),
-            const SizedBox(
-              height: 80,
-            ),
+            const SizedBox(height: 80),
           ],
         ),
       ),

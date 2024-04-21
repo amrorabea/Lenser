@@ -13,29 +13,24 @@ class GetStarted extends StatelessWidget {
         backgroundColor: backGround,
         body: Column(
           children: [
-            const SizedBox(
-              height: 100,
-            ),
+            const SizedBox(height: 100),
             const Image(
               image: AssetImage('images/objects.png'),
               height: 130,
             ),
             const Spacer(),
-            const Text(
-              "Know what you are looking for",
-              style: TextStyle(
-                fontSize: 23,
-                color: fontColor,
-              ),
+            text(
+              txt: "Know what you are looking for",
+              size: 23,
+              weight: FontWeight.normal,
+              color: fontColor,
             ),
             const Spacer(),
-            const SizedBox(
-              height: 15,
-            ),
-            const Row(
+            const SizedBox(height: 15),
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                GradientText(
+                const GradientText(
                   text: "L",
                   gradient: LinearGradient(colors: [
                     circles,
@@ -43,32 +38,23 @@ class GetStarted extends StatelessWidget {
                   ]),
                   style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
                 ),
-                Text(
-                  "enser",
-                  style: TextStyle(
-                    fontSize: 50,
-                    fontWeight: FontWeight.bold,
-                    color: fontColor,
-                  ),
-                ),
+                text(
+                    txt: "enser",
+                    size: 50,
+                    weight: FontWeight.bold,
+                    color: fontColor),
               ],
             ),
             const Spacer(),
-            const SizedBox(
-              height: 30,
-            ),
-            const Text(
-              "Not sure how to describe what you see\nin words?\nUse your camera to detect it and\nsearch for it using AI & Google Gemini!",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 15,
-                color: fontColor,
-              ),
-            ),
+            const SizedBox(height: 30),
+            text(
+                txt:
+                    "Not sure how to describe what you see\nin words?\nUse your camera to detect it and\nsearch for it using AI & Google Gemini!",
+                size: 15,
+                weight: FontWeight.normal,
+                color: fontColor),
             const Spacer(),
-            const SizedBox(
-              height: 100,
-            ),
+            const SizedBox(height: 100),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -85,13 +71,11 @@ class GetStarted extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15),
                 ),
               ),
-              child: const Text(
-                "Get Started",
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.white,
-                ),
-              ),
+              child: text(
+                  txt: "Get Started",
+                  size: 20,
+                  weight: FontWeight.normal,
+                  color: Colors.white),
             ),
             const Spacer(),
           ],

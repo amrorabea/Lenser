@@ -5,6 +5,86 @@ import 'package:source_code/pages/about.dart';
 import 'package:source_code/pages/home.dart';
 import 'package:source_code/pages/settings.dart';
 import 'package:source_code/pages/signing/login.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+class text extends StatelessWidget {
+  final String txt;
+  final double size;
+  final double? height;
+  final FontWeight? weight;
+  final TextAlign? align;
+  final Color? color;
+
+  text({
+    super.key,
+    required this.txt,
+    required this.size,
+    this.weight,
+    this.align,
+    this.color,
+    this.height,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      txt,
+      textAlign: align ?? TextAlign.left,
+      style: TextStyle(
+        fontSize: size,
+        fontWeight: weight,
+        color: color,
+        height: height,
+      ),
+    );
+  }
+}
+
+// ==========================================
+// ABOUT VARS ===============================
+
+const double sizeCategories = 19;
+const double sizeTitles = 25;
+const double sizeWorkers = 23;
+const double sizeMedia = 15;
+const double sizeMediaIcons = 65;
+
+class contacts extends StatelessWidget {
+  // The logos and their links (Gmail, Facebook ...)
+  final String imageUrl;
+  final String siteLink;
+  final String txt;
+  contacts({
+    super.key,
+    required this.imageUrl,
+    required this.siteLink,
+    required this.txt,
+  });
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        InkWell(
+          onTap: () async {
+            final url = siteLink;
+            final Uri url3 = Uri.parse(url);
+            await launchUrl(url3, mode: LaunchMode.externalApplication);
+          },
+          child: Image(
+            width: sizeMediaIcons,
+            image: AssetImage(imageUrl),
+          ),
+        ),
+        Text(
+          txt,
+          style: const TextStyle(
+            fontSize: sizeMedia,
+          ),
+        ),
+      ],
+    );
+  }
+}
 
 // ==========================================
 // COLORS ===================================

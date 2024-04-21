@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:source_code/components/containers.dart';
 import 'package:source_code/pages/chatbot.dart';
@@ -12,10 +10,6 @@ class Home extends StatefulWidget {
   @override
   State<Home> createState() => _HomeState();
 }
-
-double wid = 90;
-int counter = 0;
-const double lenser = 35;
 
 class _HomeState extends State<Home> {
   @override
@@ -37,28 +31,26 @@ class _HomeState extends State<Home> {
                   padding: EdgeInsets.only(left: 30, right: 30),
                 ),
                 // ======================================================
-                const Padding(
-                  padding: EdgeInsets.only(left: 10, right: 5),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10, right: 5),
                   child: Row(
                     children: [
                       Column(
                         children: [
-                          Text(
-                            "Object Detection",
-                            style: TextStyle(
-                                fontSize: 30,
-                                height: 2,
-                                fontWeight: FontWeight.bold),
+                          text(
+                            txt: "Object Detection",
+                            size: 30,
+                            height: 2,
+                            weight: FontWeight.bold,
                           ),
-                          Text(
-                            " AI model trained with deep \n learning to detect objects \n recorder by camera",
-                            style: TextStyle(
-                              fontSize: 18,
-                            ),
+                          text(
+                            txt:
+                                " AI model trained with deep \n learning to detect objects \n recorder by camera",
+                            size: 18,
                           ),
                         ],
                       ),
-                      Padding(
+                      const Padding(
                         padding: EdgeInsets.all(8.0),
                         child: Image(
                           image: AssetImage('images/camera.png'),
@@ -86,31 +78,24 @@ class _HomeState extends State<Home> {
                       borderRadius: BorderRadius.circular(14),
                     ),
                   ),
-                  child: const Text(
-                    "Try it !",
-                    style: TextStyle(
-                      fontSize: 22,
-                    ),
-                  ),
+                  child: text(txt: "Try it !", size: 22),
                 ),
                 // =====================================
                 const SizedBox(height: 30),
-                const Padding(
-                    padding: EdgeInsets.only(left: 30, right: 30),
+                Padding(
+                    padding: const EdgeInsets.only(left: 30, right: 30),
                     child: Row(
                       children: [
-                        Expanded(
+                        const Expanded(
                           child: Divider(
                             thickness: 2,
                           ),
                         ),
-                        Text(
-                          "     And     ",
-                          style: TextStyle(
-                            fontSize: 18,
-                          ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 40, right: 40),
+                          child: text(txt: 'And', size: 18),
                         ),
-                        Expanded(
+                        const Expanded(
                           child: Divider(
                             thickness: 2,
                           ),
@@ -119,29 +104,29 @@ class _HomeState extends State<Home> {
                     )),
                 //==================================
                 const SizedBox(height: 40),
-                const Padding(
-                  padding: EdgeInsets.only(left: 3, right: 3),
+                Padding(
+                  padding: const EdgeInsets.only(left: 3, right: 3),
                   child: Row(
                     children: [
                       Column(
                         children: [
-                          Text(
-                            "Gemini API",
-                            style: TextStyle(
-                                fontSize: 30,
-                                height: 2,
-                                fontWeight: FontWeight.bold),
+                          text(
+                            txt: "Gemini API",
+                            size: 30,
+                            weight: FontWeight.bold,
+                            height: 2,
                           ),
                           Padding(
-                            padding: EdgeInsets.all(8.0),
-                            child: Text(
-                              " With the help of\n Gemini,\n You can now send the\n image to Gemini, and it\n will response to you\n with additional info on\n the detected objects ",
-                              style: TextStyle(fontSize: 18),
-                            ),
+                            padding: const EdgeInsets.all(8.0),
+                            child: text(
+                                txt:
+                                    " With the help of\n Gemini,\n You can now send the\n image to Gemini, and it\n will response to you\n with additional info on\n the detected objects",
+                                size: 18,
+                                weight: FontWeight.normal),
                           ),
                         ],
                       ),
-                      Image(
+                      const Image(
                         image: AssetImage('images/bot.png'),
                         width: 180,
                       )
@@ -165,11 +150,9 @@ class _HomeState extends State<Home> {
                       borderRadius: BorderRadius.circular(15),
                     ),
                   ),
-                  child: const Text(
-                    "Try Gemini's API !",
-                    style: TextStyle(
-                      fontSize: 22,
-                    ),
+                  child: text(
+                    txt: "Try Gemini's API !",
+                    size: 22,
                   ),
                 ),
                 const SizedBox(height: 30),

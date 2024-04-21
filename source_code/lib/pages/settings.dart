@@ -9,10 +9,8 @@ class Settings extends StatefulWidget {
   State<Settings> createState() => _SettingsState();
 }
 
-const double currentFont = 18;
-const double sizeCategories = 19;
-bool swit = false;
-String _selectedView = 'Card';
+String _size = 'Medium';
+String _voice = 'Male';
 
 class _SettingsState extends State<Settings> {
   @override
@@ -27,12 +25,10 @@ class _SettingsState extends State<Settings> {
             child: Column(
               children: [
                 const SizedBox(height: 12),
-                const Text(
-                  'Settings',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: sizeCategories,
-                  ),
+                text(
+                  txt: 'Settings',
+                  size: 19,
+                  weight: FontWeight.bold,
                 ),
                 const SizedBox(height: 60),
                 ListTile(
@@ -52,29 +48,38 @@ class _SettingsState extends State<Settings> {
                   leading: const Icon(Icons.abc_rounded),
                   title: const Text("Font size"),
                   trailing: PopupMenuButton(
-                    onSelected: (value) =>
-                        setState(() => _selectedView = value),
+                    onSelected: (value) => setState(() => _size = value),
                     itemBuilder: (_) => [
                       CheckedPopupMenuItem(
-                        checked: _selectedView == 'Large',
+                        checked: _size == 'Large',
                         value: 'Large',
                         child: const Text('Large'),
                       ),
                       CheckedPopupMenuItem(
-                        checked: _selectedView == 'Medium',
+                        checked: _size == 'Medium',
                         value: 'Medium',
                         child: const Text('Medium'),
                       ),
                       CheckedPopupMenuItem(
-                        checked: _selectedView == 'Small',
+                        checked: _size == 'Small',
                         value: 'Small',
                         child: const Text('Small'),
                       ),
                     ],
-                    child: const Icon(
-                      Icons.keyboard_arrow_down_rounded,
-                      size: 35,
-                      color: buttonColor,
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        text(
+                          txt: _size,
+                          size: 15,
+                          color: Colors.black,
+                        ),
+                        const Icon(
+                          Icons.keyboard_arrow_down_rounded,
+                          size: 35,
+                          color: buttonColor,
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -84,24 +89,33 @@ class _SettingsState extends State<Settings> {
                   leading: const Icon(Icons.keyboard_voice_outlined),
                   title: const Text("Voice"),
                   trailing: PopupMenuButton(
-                    onSelected: (value) =>
-                        setState(() => _selectedView = value),
+                    onSelected: (value) => setState(() => _voice = value),
                     itemBuilder: (_) => [
                       CheckedPopupMenuItem(
-                        checked: _selectedView == 'Male',
+                        checked: _voice == 'Male',
                         value: 'Male',
                         child: const Text('Male'),
                       ),
                       CheckedPopupMenuItem(
-                        checked: _selectedView == 'Female',
+                        checked: _voice == 'Female',
                         value: 'Female',
                         child: const Text('Female'),
                       ),
                     ],
-                    child: const Icon(
-                      Icons.keyboard_arrow_down_rounded,
-                      size: 35,
-                      color: buttonColor,
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        text(
+                          txt: _voice,
+                          size: 15,
+                          color: Colors.black,
+                        ),
+                        const Icon(
+                          Icons.keyboard_arrow_down_rounded,
+                          size: 35,
+                          color: buttonColor,
+                        ),
+                      ],
                     ),
                   ),
                 ),

@@ -10,14 +10,6 @@ class AboutPage extends StatefulWidget {
   State<AboutPage> createState() => _AboutPageState();
 }
 
-const double sizeCategories = 19;
-const double sizeTitles = 25;
-const double sizeWorkers = 23;
-const double paddingDividerLeft = 60;
-const double paddingDividerRight = 60;
-const double sizeMedia = 15;
-const double sizeMediaIcons = 65;
-
 class _AboutPageState extends State<AboutPage> {
   @override
   Widget build(BuildContext context) {
@@ -26,208 +18,108 @@ class _AboutPageState extends State<AboutPage> {
       extendBodyBehindAppBar: true,
       body: Consumer<UiProvider>(
         builder: (context, UiProvider notifier, child) {
-          return Padding(
-            padding: const EdgeInsets.only(top: 50),
-            child: Column(
-              children: [
-                const SizedBox(height: 12),
-                const Text(
-                  'About us',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: sizeCategories,
+          return SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 50),
+              child: Column(
+                children: [
+                  const SizedBox(height: 12),
+                  const Text(
+                    // About us
+                    'About us',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: sizeCategories),
                   ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 25, top: 10),
-                  child: Row(
+                  Padding(
+                      // Lenser with gradient L
+                      padding: const EdgeInsets.only(left: 25, top: 10),
+                      child: Row(children: [
+                        const GradientText(
+                            text: "L",
+                            gradient:
+                                LinearGradient(colors: [circles, Colors.black]),
+                            style: TextStyle(
+                                fontSize: 50, fontWeight: FontWeight.bold)),
+                        text(txt: "enser", size: 50, weight: FontWeight.bold),
+                      ])),
+                  const SizedBox(height: 15),
+                  text(
+                      txt:
+                          "This project was created by\nModern Academy students\nand used programming\n languages (Flutter, Python)\nand the help of artificial\nintelligence which\nparticipated in it :",
+                      size: 24,
+                      weight: FontWeight.normal,
+                      align: TextAlign.center),
+                  // ============
+                  // Participants
+                  text(
+                      txt: "Ahmed Wael",
+                      size: sizeWorkers,
+                      weight: FontWeight.bold),
+                  const SizedBox(height: 10),
+                  text(
+                      txt: "Mahmoud Reda",
+                      size: sizeWorkers,
+                      weight: FontWeight.bold),
+                  const SizedBox(height: 10),
+                  text(
+                      txt: "Seif Ezz",
+                      size: sizeWorkers,
+                      weight: FontWeight.bold),
+                  const SizedBox(height: 10),
+                  text(
+                      txt: "Amro Rabea",
+                      size: sizeWorkers,
+                      weight: FontWeight.bold),
+                  const SizedBox(height: 10),
+                  text(
+                      txt: "Yousef Mohamed",
+                      size: sizeWorkers,
+                      weight: FontWeight.bold),
+                  const SizedBox(height: 10),
+                  text(
+                      txt: "Hossam Dyab",
+                      size: sizeWorkers,
+                      weight: FontWeight.bold),
+                  // ============
+                  const Padding(
+                    // Divider
+                    padding: EdgeInsets.only(left: 0, right: 0, top: 50),
+                    child: Divider(thickness: 2),
+                  ),
+                  const SizedBox(height: 10),
+                  text(
+                      txt: "For contact",
+                      size: sizeTitles,
+                      weight: FontWeight.normal),
+                  // ============
+                  // Contact Logos and links
+                  Row(
                     children: [
-                      GradientText(
-                        text: "L",
-                        gradient: LinearGradient(colors: [
-                          circles,
-                          Colors.black,
-                        ]),
-                        style: TextStyle(
-                            fontSize: 50, fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        "enser",
-                        style: TextStyle(
-                          fontSize: 50,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+                      const Spacer(),
+                      contacts(
+                          imageUrl: 'images/gmail.png',
+                          siteLink: "lenser5app@gmail.com",
+                          txt: "Gmail"),
+                      const Spacer(),
+                      contacts(
+                          imageUrl: 'images/facebook.png',
+                          siteLink: "https://google.com",
+                          txt: "Facebook"),
+                      const Spacer(),
+                      contacts(
+                          imageUrl: 'images/twitter.png',
+                          siteLink: "https://google.com",
+                          txt: "Twitter"),
+                      const Spacer(),
+                      contacts(
+                          imageUrl: 'images/github.png',
+                          siteLink: "https://google.com",
+                          txt: "GitHub"),
+                      const Spacer(),
                     ],
                   ),
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
-                const Text(
-                  "This project was created by\nModern Academy students\nand used programming\n languages (Flutter, Python)\nand the help of artificial\nintelligence which\nparticipated in it :",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 24,
-                  ),
-                ),
-                const Text(
-                  "Ahmed Wael",
-                  style: TextStyle(
-                    fontSize: sizeWorkers,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(height: 10),
-                const Text(
-                  "Mahmoud Reda",
-                  style: TextStyle(
-                    fontSize: sizeWorkers,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(height: 10),
-                const Text(
-                  "Seif Ezz",
-                  style: TextStyle(
-                    fontSize: sizeWorkers,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(height: 10),
-                const Text(
-                  "Amro Rabea",
-                  style: TextStyle(
-                    fontSize: sizeWorkers,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(height: 10),
-                const Text(
-                  "Yousef Mohamed",
-                  style: TextStyle(
-                    fontSize: sizeWorkers,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(height: 10),
-                const Text(
-                  "Hossam Dyab",
-                  style: TextStyle(
-                    fontSize: sizeWorkers,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 0, right: 0, top: 50),
-                  child: Divider(
-                    thickness: 2,
-                  ),
-                ),
-                const SizedBox(height: 10),
-                const Text(
-                  "For contact",
-                  style: TextStyle(
-                    fontSize: sizeTitles,
-                  ),
-                ),
-                Row(
-                  children: [
-                    const Spacer(),
-                    Column(
-                      children: [
-                        InkWell(
-                          onTap: () async {
-                            const url = "lenser5app@gmail.com";
-                            final Uri url0 = Uri.parse(url);
-                            await launchUrl(url0,
-                                mode: LaunchMode.externalApplication);
-                          },
-                          child: const Image(
-                            width: sizeMediaIcons,
-                            image: AssetImage('images/gmail.png'),
-                            height: 60,
-                          ),
-                        ),
-                        const Text(
-                          "Gmail",
-                          style: TextStyle(fontSize: sizeMedia),
-                        ),
-                      ],
-                    ),
-                    const Spacer(),
-                    Column(
-                      children: [
-                        InkWell(
-                          onTap: () async {
-                            const url = "https://google.com";
-                            final Uri url1 = Uri.parse(url);
-                            await launchUrl(url1,
-                                mode: LaunchMode.externalApplication);
-                          },
-                          child: const Image(
-                            width: sizeMediaIcons - 5,
-                            image: AssetImage('images/facebook.png'),
-                          ),
-                        ),
-                        const Text(
-                          "Facebook",
-                          style: TextStyle(
-                            fontSize: sizeMedia,
-                          ),
-                        ),
-                      ],
-                    ),
-                    const Spacer(),
-                    Column(
-                      children: [
-                        InkWell(
-                          onTap: () async {
-                            const url = "https://google.com";
-                            final Uri url2 = Uri.parse(url);
-                            await launchUrl(url2,
-                                mode: LaunchMode.externalApplication);
-                          },
-                          child: const Image(
-                            width: sizeMediaIcons,
-                            image: AssetImage('images/twitter.png'),
-                          ),
-                        ),
-                        const Text(
-                          "Twitter",
-                          style: TextStyle(
-                            fontSize: sizeMedia,
-                          ),
-                        ),
-                      ],
-                    ),
-                    const Spacer(),
-                    Column(
-                      children: [
-                        InkWell(
-                          onTap: () async {
-                            const url = "https://google.com";
-                            final Uri url3 = Uri.parse(url);
-                            await launchUrl(url3,
-                                mode: LaunchMode.externalApplication);
-                          },
-                          child: const Image(
-                            width: sizeMediaIcons,
-                            image: AssetImage('images/github.png'),
-                          ),
-                        ),
-                        const Text(
-                          "GitHub",
-                          style: TextStyle(
-                            fontSize: sizeMedia,
-                          ),
-                        ),
-                      ],
-                    ),
-                    const Spacer(),
-                  ],
-                ),
-              ],
+                ],
+              ),
             ),
           );
         },
