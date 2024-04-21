@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "741907606467",
+    "project_id": "lenser-es",
+    "storage_bucket": "lenser-es.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:741907606467:android:d0b5be3b43c3050c86ab76",
+        "android_client_info": {
+          "package_name": "com.example.source_code"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxHzaT-hGXgL6YMKXeKwfybM3Yr5XtMs0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
