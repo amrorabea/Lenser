@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:source_code/pages/about.dart';
+import 'package:source_code/pages/Chatbot/chatbot.dart';
 import 'package:source_code/pages/home.dart';
 import 'package:source_code/pages/settings.dart';
 import 'package:source_code/pages/signing/login.dart';
@@ -37,6 +38,77 @@ class text extends StatelessWidget {
         fontWeight: weight,
         color: color,
         height: height,
+      ),
+    );
+  }
+}
+
+// ==========================================
+// CHATBOT ==================================
+
+class messageMe extends StatelessWidget {
+  final Message txt;
+  const messageMe({
+    super.key,
+    required this.txt,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      alignment: Alignment.centerRight,
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        constraints: BoxConstraints(maxWidth: 230),
+        margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        decoration: const BoxDecoration(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(32),
+            topRight: Radius.circular(32),
+            bottomRight: Radius.circular(32),
+          ),
+          color: Color.fromARGB(255, 4, 52, 91),
+        ),
+        child: Text(
+          txt.message,
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class messageBot extends StatelessWidget {
+  final Message txt;
+  const messageBot({
+    super.key,
+    required this.txt,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        constraints: BoxConstraints(maxWidth: 230),
+        margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        decoration: const BoxDecoration(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(32),
+            topRight: Radius.circular(32),
+            bottomRight: Radius.circular(32),
+          ),
+          color: buttonColor,
+        ),
+        child: Text(
+          txt.message,
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
       ),
     );
   }
@@ -167,6 +239,7 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      automaticallyImplyLeading: false,
       actions: [
         const SizedBox(width: 20),
         PopupMenuButton(

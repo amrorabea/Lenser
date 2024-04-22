@@ -1,15 +1,19 @@
 // ignore_for_file: must_be_immutable
 
+import 'dart:io';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:source_code/components/containers.dart';
+import 'package:source_code/pages/Chatbot/gemini_init.dart';
 import 'package:source_code/pages/get_started.dart';
 import 'package:source_code/pages/home.dart';
 import 'package:source_code/pages/signing/login.dart';
-import 'package:source_code/pages/signing/signup.dart';
+import 'package:google_generative_ai/google_generative_ai.dart';
 
 bool? start;
 
@@ -33,6 +37,10 @@ void firstOpen() async {
 
 void main() async {
   firstOpen();
+
+  // RxString res = ''.obs;
+  // res.value = await GeminiAPI.getGeminiData('Hello');
+  // print(res.value);
   runApp(MyApp(start: start));
 }
 

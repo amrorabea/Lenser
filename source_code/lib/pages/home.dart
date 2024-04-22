@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:source_code/components/containers.dart';
-import 'package:source_code/pages/chatbot.dart';
+import 'package:source_code/pages/Chatbot/chatbot.dart';
 import 'package:source_code/pages/object_detection.dart';
 
 class Home extends StatefulWidget {
@@ -126,10 +126,10 @@ class _HomeState extends State<Home> {
                           ),
                         ],
                       ),
-                      const Image(
-                        image: AssetImage('images/bot.png'),
-                        width: 180,
-                      )
+                      // const Image(
+                      //   image: AssetImage('images/bot.png'),
+                      //   width: 180,
+                      // )
                     ],
                   ),
                 ),
@@ -139,7 +139,7 @@ class _HomeState extends State<Home> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const ChatBot(),
+                        builder: (context) => ChatBot(),
                       ),
                     );
                   }, // takes us to the home page
