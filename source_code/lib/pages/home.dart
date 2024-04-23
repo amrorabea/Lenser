@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:source_code/components/containers.dart';
@@ -135,7 +136,13 @@ class _HomeState extends State<Home> {
                 ),
                 const SizedBox(height: 20),
                 ElevatedButton(
-                  onPressed: () {
+                  onPressed: () async {
+                    var collection =
+                        FirebaseFirestore.instance.collection('messages');
+                    var snapshots = await collection.get();
+                    for (var doc in snapshots.docs) {
+                      await doc.reference.delete();
+                    }
                     Navigator.push(
                       context,
                       MaterialPageRoute(
