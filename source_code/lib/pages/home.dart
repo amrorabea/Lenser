@@ -162,7 +162,7 @@ class _HomeState extends State<Home> {
                 ElevatedButton(
                   onPressed: () async {
                     var collection =
-                        FirebaseFirestore.instance.collection('messages');
+                        FirebaseFirestore.instance.collection('null');
                     var snapshots = await collection.get();
                     for (var doc in snapshots.docs) {
                       await doc.reference.delete();

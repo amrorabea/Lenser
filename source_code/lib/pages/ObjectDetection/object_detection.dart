@@ -7,7 +7,7 @@ import 'dart:math' as math;
 class ObjectDetection extends StatefulWidget {
   final List<CameraDescription> cameras;
 
-  const ObjectDetection(this.cameras);
+  const ObjectDetection(this.cameras, {super.key});
 
   @override
   State<ObjectDetection> createState() => _ObjectDetectionState();
@@ -43,6 +43,10 @@ class _ObjectDetectionState extends State<ObjectDetection> {
             screen.height,
             screen.width,
             "SSD MobileNet"),
+        Positioned(
+          child: Text("New Text"),
+          bottom: 170,
+        )
       ],
     );
   }

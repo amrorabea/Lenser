@@ -1,13 +1,14 @@
 // ignore_for_file: non_constant_identifier_names
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:source_code/components/containers.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:source_code/pages/Chatbot/gemini_init.dart';
 
-// String loggedEmail = FirebaseAuth.instance.currentUser!.email.toString();
-String loggedEmail = 'messages';
+String loggedEmail = FirebaseAuth.instance.currentUser!.email.toString();
+// String loggedEmail = 'messages';
 
 class Message {
   final String message;
