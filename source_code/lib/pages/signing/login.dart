@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:source_code/Auth/Auth.dart';
+import 'package:source_code/auth/auth.dart';
 import 'package:source_code/components/containers.dart';
 import 'package:source_code/pages/signing/signup.dart';
 

@@ -1,4 +1,5 @@
-import 'package:firebase_auth/firebase_auth.dart';
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:source_code/components/containers.dart';
@@ -18,7 +19,7 @@ class Message {
 }
 
 class ChatBot extends StatefulWidget {
-  ChatBot({super.key});
+  const ChatBot({super.key});
 
   @override
   State<ChatBot> createState() => _ChatBotState();
@@ -59,7 +60,7 @@ class _ChatBotState extends State<ChatBot> {
             Content.add(Message.fromJson(snapshot.data!.docs[i]));
           }
           return Scaffold(
-            appBar: appBAR(),
+            appBar: const appBAR(),
             body: Column(
               children: [
                 Expanded(

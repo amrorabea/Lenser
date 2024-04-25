@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'dart:ui';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -7,12 +9,7 @@ import 'package:source_code/pages/Chatbot/chatbot.dart';
 import 'package:source_code/pages/home.dart';
 import 'package:source_code/pages/settings.dart';
 import 'package:source_code/pages/signing/login.dart';
-import 'package:source_code/pages/signing/signup.dart';
 import 'package:url_launcher/url_launcher.dart';
-
-// ==============
-
-// ============
 
 class text extends StatelessWidget {
   final String txt;
@@ -22,7 +19,7 @@ class text extends StatelessWidget {
   final TextAlign? align;
   final Color? color;
 
-  text({
+  const text({
     super.key,
     required this.txt,
     required this.size,
@@ -63,8 +60,8 @@ class messageMe extends StatelessWidget {
       alignment: Alignment.centerRight,
       child: Container(
         padding: const EdgeInsets.all(16),
-        constraints: BoxConstraints(maxWidth: 230),
-        margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        constraints: const BoxConstraints(maxWidth: 230),
+        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(32),
@@ -75,7 +72,7 @@ class messageMe extends StatelessWidget {
         ),
         child: Text(
           txt.message,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.white,
           ),
         ),
@@ -97,8 +94,8 @@ class messageBot extends StatelessWidget {
       alignment: Alignment.centerLeft,
       child: Container(
         padding: const EdgeInsets.all(16),
-        constraints: BoxConstraints(maxWidth: 230),
-        margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        constraints: const BoxConstraints(maxWidth: 230),
+        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(32),
@@ -109,7 +106,7 @@ class messageBot extends StatelessWidget {
         ),
         child: Text(
           txt.message,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.white,
           ),
         ),
@@ -132,7 +129,7 @@ class contacts extends StatelessWidget {
   final String imageUrl;
   final String siteLink;
   final String txt;
-  contacts({
+  const contacts({
     super.key,
     required this.imageUrl,
     required this.siteLink,
@@ -253,7 +250,7 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
           offset: const Offset(-20, 0),
           constraints:
               const BoxConstraints.expand(width: 150, height: double.infinity),
-          color: Color.fromARGB(130, 0, 198, 168),
+          color: const Color.fromARGB(130, 0, 198, 168),
           child: const Icon(
             Icons.menu_rounded,
             size: 50,
