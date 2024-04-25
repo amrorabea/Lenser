@@ -1,9 +1,12 @@
+import 'package:camera/camera.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:source_code/components/containers.dart';
 import 'package:source_code/pages/Chatbot/chatbot.dart';
-import 'package:source_code/pages/object_detection.dart';
+import 'package:source_code/pages/ObjectDetection/object_detection.dart';
+import 'package:tflite/tflite.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -64,11 +67,32 @@ class _HomeState extends State<Home> {
                 ),
                 const SizedBox(height: 20),
                 ElevatedButton(
-                  onPressed: () {
+                  onPressed: () async {
+                    // INIT
+                    bool flag = false;
+                    List<CameraDescription>? cameras;
+                    WidgetsFlutterBinding.ensureInitialized();
+                    try {
+                      cameras = await availableCameras();
+                    } on CameraException catch (e) {
+                      print('Error: $e.code\nError Message: $e.message');
+                    }
+                    //
+                    try {
+                      await Tflite.loadModel(
+                        model: "assets/ssd_mobilenet.tflite",
+                        labels: "assets/ssd_mobilenet.txt",
+                      );
+                      flag = true;
+                      print('Model loaded successfully');
+                    } on PlatformException catch (e) {
+                      print('Failed to load model: $e');
+                    }
+                    print("FLAG $flag");
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const ObjectDetection(),
+                        builder: (context) => ObjectDetection(cameras!),
                       ),
                     );
                   }, // takes us to the home page

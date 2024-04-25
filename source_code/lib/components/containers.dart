@@ -10,6 +10,10 @@ import 'package:source_code/pages/signing/login.dart';
 import 'package:source_code/pages/signing/signup.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+// ==============
+
+// ============
+
 class text extends StatelessWidget {
   final String txt;
   final double size;

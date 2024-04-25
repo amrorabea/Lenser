@@ -1,8 +1,5 @@
-import 'dart:js';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:source_code/components/containers.dart';
 import 'package:source_code/pages/home.dart';
 
 class Auth {

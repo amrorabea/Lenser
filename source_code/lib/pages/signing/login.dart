@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable, camel_case_types, non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:source_code/Auth/Auth.dart';
@@ -83,7 +85,7 @@ class loginScreen extends StatelessWidget {
                         return null;
                       },
                       obscureText: true,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: "    Password",
                         hintStyle: TextStyle(color: buttonColor),
                         filled: true,
@@ -111,9 +113,8 @@ class loginScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding:
-                        const EdgeInsets.only(left: 30, right: 30, top: 10),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 30, right: 30, top: 10),
                     child: Divider(thickness: 2),
                   ),
                   const SizedBox(height: 20),
