@@ -64,6 +64,7 @@ class MyApp extends StatelessWidget {
             home: start == true
                 ? const Onboarding()
                 : (logged == null ? loginScreen() : const Home()),
+            // home: Onboarding(),
           );
         },
       ),

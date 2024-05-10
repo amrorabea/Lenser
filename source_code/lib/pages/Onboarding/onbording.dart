@@ -27,12 +27,9 @@ class _OnboardingState extends State<Onboarding> {
               });
             },
             children: [
-              _buildPage("images/need1-removebg.png",
-                  "Quickly identify objects in your Camera"),
-              _buildPage("images/need1-removebg.png",
-                  "Quickly identify objects in your Camera"),
-              _buildPage("images/need1-removebg.png",
-                  "Quickly identify objects in your Camera"),
+              _buildPage("images/firstOn.jpg", "Detect Objects using camera!"),
+              _buildPage("images/secondOn.jpg", "Ask Gemini Chatbot"),
+              _buildPage("images/thirdOn.jpg", "Start using the app"),
             ],
           ),
           Positioned(
@@ -66,7 +63,7 @@ class _OnboardingState extends State<Onboarding> {
               child: Container(
                 width: 40,
                 height: 40,
-                decoration: BoxDecoration(  
+                decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Colors.black,
                 ),
@@ -117,6 +114,7 @@ class _OnboardingState extends State<Onboarding> {
         Center(
           child: Text(
             text,
+            style: TextStyle(fontSize: 30),
           ),
         ),
         const SizedBox(height: 200),

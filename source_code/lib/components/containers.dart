@@ -238,9 +238,8 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
             borderRadius: BorderRadius.only(),
           ),
           offset: const Offset(-20, 0),
-          constraints:
-              const BoxConstraints.expand(width: 150, height: double.infinity),
-          color: const Color.fromARGB(130, 0, 198, 168),
+          constraints: const BoxConstraints.expand(width: 150, height: 300),
+          color: Color.fromRGBO(255, 115, 92, 0.7),
           child: const Icon(
             Icons.menu_rounded,
             size: 50,
