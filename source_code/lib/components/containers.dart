@@ -165,7 +165,7 @@ class contacts extends StatelessWidget {
 // ==========================================
 // COLORS ===================================
 
-const Color buttonColor = Color.fromRGBO(0, 198, 186, 1);
+const Color buttonColor = Color.fromRGBO(255, 115, 92, 1);
 
 const double smallFont = 12;
 const double mediumFont = 18;
