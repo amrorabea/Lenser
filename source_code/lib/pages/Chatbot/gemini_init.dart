@@ -10,7 +10,6 @@ class GeminiAPI {
     };
   }
 
-  //now lets create a http request
   static Future<String> getGeminiData(message) async {
     try {
       String apiKey =
@@ -61,44 +60,3 @@ class GeminiAPI {
     }
   }
 }
-
-
-// #!/bin/bash
-
-// API_KEY="YOUR_API_KEY"
-
-// curl \
-//   -X POST https://generativelanguage.googleapis.com/v1beta/models/gemini-1.0-pro:generateContent?key=${API_KEY} \
-//   -H 'Content-Type: application/json' \
-//   -d @<(echo '{
-//   "contents": [
-//     {
-//       "parts": []
-//     }
-//   ],
-//   "generationConfig": {
-//     "temperature": 0.9,
-//     "topK": 1,
-//     "topP": 1,
-//     "maxOutputTokens": 2048,
-//     "stopSequences": []
-//   },
-//   "safetySettings": [
-//     {
-//       "category": "HARM_CATEGORY_HARASSMENT",
-//       "threshold": "BLOCK_MEDIUM_AND_ABOVE"
-//     },
-//     {
-//       "category": "HARM_CATEGORY_HATE_SPEECH",
-//       "threshold": "BLOCK_MEDIUM_AND_ABOVE"
-//     },
-//     {
-//       "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
-//       "threshold": "BLOCK_MEDIUM_AND_ABOVE"
-//     },
-//     {
-//       "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
-//       "threshold": "BLOCK_MEDIUM_AND_ABOVE"
-//     }
-//   ]
-// }')

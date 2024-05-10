@@ -5,22 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:source_code/components/containers.dart';
-import 'package:source_code/pages/get_started.dart';
+import 'package:source_code/pages/Onboarding/onbording.dart';
 import 'package:source_code/pages/home.dart';
 import 'package:source_code/pages/signing/login.dart';
 
-bool? start;
-
-void firstOpen() async {
-  final SharedPreferences prefs = await SharedPreferences.getInstance();
-  bool? flag = prefs.getBool('started');
-  if (flag == null) {
-    await prefs.setBool('started', true);
-    start = true;
-  } else {
-    start = false;
-  }
-}
+// Animation
+// Onboarding
+// NavigationBottomBar
 
 User? logged;
 void main() async {
@@ -35,8 +26,18 @@ void main() async {
     // print("Firebase Connected!");
   });
   logged = FirebaseAuth.instance.currentUser;
+  // print('1111 $logged');
 
-  firstOpen();
+  bool start;
+  final SharedPreferences prefs = await SharedPreferences.getInstance();
+  bool? flag = prefs.getBool('started');
+  if (flag == null) {
+    await prefs.setBool('started', true);
+    start = true;
+  } else {
+    start = false;
+  }
+
   runApp(MyApp(start: start));
 }
 
@@ -61,10 +62,8 @@ class MyApp extends StatelessWidget {
                 notifier.isDark ? notifier.darkTheme : notifier.lightTheme,
             theme: notifier.lightTheme,
             home: start == true
-                ? const GetStarted()
-                : logged == null
-                    ? loginScreen()
-                    : const Home(),
+                ? const Onboarding()
+                : (logged == null ? loginScreen() : const Home()),
           );
         },
       ),

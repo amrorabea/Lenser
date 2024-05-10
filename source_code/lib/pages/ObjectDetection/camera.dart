@@ -3,8 +3,6 @@ import 'package:camera/camera.dart';
 import 'package:tflite/tflite.dart';
 import 'dart:math' as math;
 
-import 'models.dart';
-
 typedef void Callback(List<dynamic> list, int h, int w);
 
 class Camera extends StatefulWidget {
@@ -37,8 +35,6 @@ class _CameraState extends State<Camera> {
         if (!mounted) {
           return;
         }
-        setState(() {});
-
         controller!.startImageStream((CameraImage img) {
           if (!isDetecting) {
             isDetecting = true;
@@ -47,13 +43,13 @@ class _CameraState extends State<Camera> {
               bytesList: img.planes.map((plane) {
                 return plane.bytes;
               }).toList(),
-              model: widget.model == yolo ? "YOLO" : "SSDMobileNet",
+              model: "SSDMobileNet",
               imageHeight: img.height,
               imageWidth: img.width,
-              imageMean: widget.model == yolo ? 0 : 127.5,
-              imageStd: widget.model == yolo ? 255.0 : 127.5,
+              imageMean: 127.5,
+              imageStd: 127.5,
               numResultsPerClass: 1,
-              threshold: widget.model == yolo ? 0.2 : 0.4,
+              threshold: 0.4,
             ).then((recognitions) {
               int endTime = new DateTime.now().millisecondsSinceEpoch;
               print("Detection took ${endTime - startTime}");
@@ -88,9 +84,8 @@ class _CameraState extends State<Camera> {
     var previewRatio = previewH / previewW;
 
     return OverflowBox(
-      maxHeight: screenRatio > previewRatio
-          ? screenH - 150
-          : screenW / previewW * previewH - 150,
+      maxHeight:
+          screenRatio > previewRatio ? screenH : screenW / previewW * previewH,
       maxWidth:
           screenRatio > previewRatio ? screenH / previewH * previewW : screenW,
       child: CameraPreview(controller!),

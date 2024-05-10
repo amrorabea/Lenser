@@ -4,6 +4,7 @@ import 'dart:ui';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:source_code/main.dart';
 import 'package:source_code/pages/about.dart';
 import 'package:source_code/pages/Chatbot/chatbot.dart';
 import 'package:source_code/pages/home.dart';
@@ -164,24 +165,11 @@ class contacts extends StatelessWidget {
 // ==========================================
 // COLORS ===================================
 
-const Color circles = Color.fromRGBO(0, 255, 240, 0.4);
-const Color backGround = Color.fromRGBO(23, 23, 23, 1);
 const Color buttonColor = Color.fromRGBO(0, 198, 186, 1);
-const Color fontColor = Colors.white;
 
 const double smallFont = 12;
 const double mediumFont = 18;
 const double bigFont = 19;
-
-double currentFont = mediumFont;
-
-const Color blackFont = Colors.black;
-const Color whiteFont = Colors.white;
-const Color blackBackground = Colors.black;
-const Color whiteBackground = Colors.white;
-
-Color currnetFontColor = blackFont;
-Color currentBackgroundColor = whiteBackground;
 
 // ==========================================
 // THEMES ===================================
@@ -194,6 +182,7 @@ class UiProvider extends ChangeNotifier {
 
   final darkTheme = ThemeData(
     primaryColor: Colors.black,
+    fontFamily: 'Signika',
     brightness: Brightness.dark,
     primaryColorDark: Colors.black,
     appBarTheme: const AppBarTheme(
@@ -208,6 +197,7 @@ class UiProvider extends ChangeNotifier {
 
   final lightTheme = ThemeData(
     primaryColor: Colors.white,
+    fontFamily: 'Signika',
     brightness: Brightness.light,
     primaryColorDark: Colors.white,
     appBarTheme: const AppBarTheme(
@@ -332,6 +322,7 @@ class appBAR extends StatelessWidget implements PreferredSizeWidget {
               );
             } else if (value == 4) {
               FirebaseAuth.instance.signOut();
+              logged = null;
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(builder: (context) => loginScreen()),

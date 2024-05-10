@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously, unused_local_variable, unused_catch_clause
+
 import 'package:camera/camera.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -35,8 +37,8 @@ class _HomeState extends State<Home> {
                   padding: EdgeInsets.only(left: 30, right: 30),
                 ),
                 // ======================================================
-                Padding(
-                  padding: const EdgeInsets.only(left: 10, right: 5),
+                const Padding(
+                  padding: EdgeInsets.only(left: 10, right: 5),
                   child: Row(
                     children: [
                       Column(
@@ -54,7 +56,7 @@ class _HomeState extends State<Home> {
                           ),
                         ],
                       ),
-                      const Padding(
+                      Padding(
                         padding: EdgeInsets.all(8.0),
                         child: Image(
                           image: AssetImage('images/camera.png'),
@@ -75,7 +77,7 @@ class _HomeState extends State<Home> {
                     try {
                       cameras = await availableCameras();
                     } on CameraException catch (e) {
-                      print('Error: $e.code\nError Message: $e.message');
+                      // print('Error: $e.code\nError Message: $e.message');
                     }
                     //
                     try {
@@ -84,11 +86,11 @@ class _HomeState extends State<Home> {
                         labels: "assets/ssd_mobilenet.txt",
                       );
                       flag = true;
-                      print('Model loaded successfully');
+                      // print('Model loaded successfully');
                     } on PlatformException catch (e) {
-                      print('Failed to load model: $e');
+                      // print('Failed to load model: $e');
                     }
-                    print("FLAG $flag");
+                    // print("FLAG $flag");
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -103,24 +105,24 @@ class _HomeState extends State<Home> {
                       borderRadius: BorderRadius.circular(14),
                     ),
                   ),
-                  child: text(txt: "Try it !", size: 22),
+                  child: const text(txt: "Try it !", size: 22),
                 ),
                 // =====================================
                 const SizedBox(height: 30),
-                Padding(
-                    padding: const EdgeInsets.only(left: 30, right: 30),
+                const Padding(
+                    padding: EdgeInsets.only(left: 30, right: 30),
                     child: Row(
                       children: [
-                        const Expanded(
+                        Expanded(
                           child: Divider(
                             thickness: 2,
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 40, right: 40),
+                          padding: EdgeInsets.only(left: 40, right: 40),
                           child: text(txt: 'And', size: 18),
                         ),
-                        const Expanded(
+                        Expanded(
                           child: Divider(
                             thickness: 2,
                           ),
@@ -129,8 +131,8 @@ class _HomeState extends State<Home> {
                     )),
                 //==================================
                 const SizedBox(height: 40),
-                Padding(
-                  padding: const EdgeInsets.only(left: 3, right: 3),
+                const Padding(
+                  padding: EdgeInsets.only(left: 3, right: 3),
                   child: Row(
                     children: [
                       Column(
@@ -142,7 +144,7 @@ class _HomeState extends State<Home> {
                             height: 2,
                           ),
                           Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: EdgeInsets.all(8.0),
                             child: text(
                                 txt:
                                     " With the help of\n Gemini,\n You can now send the\n image to Gemini, and it\n will response to you\n with additional info on\n the detected objects",
@@ -151,10 +153,10 @@ class _HomeState extends State<Home> {
                           ),
                         ],
                       ),
-                      // const Image(
-                      //   image: AssetImage('images/bot.png'),
-                      //   width: 180,
-                      // )
+                      Image(
+                        image: AssetImage('images/bot.png'),
+                        width: 140,
+                      )
                     ],
                   ),
                 ),
@@ -170,7 +172,7 @@ class _HomeState extends State<Home> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => ChatBot(),
+                        builder: (context) => const ChatBot(),
                       ),
                     );
                   }, // takes us to the home page
@@ -181,7 +183,7 @@ class _HomeState extends State<Home> {
                       borderRadius: BorderRadius.circular(15),
                     ),
                   ),
-                  child: text(
+                  child: const text(
                     txt: "Try Gemini's API !",
                     size: 22,
                   ),

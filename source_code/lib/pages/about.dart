@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:source_code/components/containers.dart';
 
-
 class AboutPage extends StatefulWidget {
   const AboutPage({super.key});
 
@@ -18,13 +17,13 @@ class _AboutPageState extends State<AboutPage> {
       extendBodyBehindAppBar: true,
       body: Consumer<UiProvider>(
         builder: (context, UiProvider notifier, child) {
-          return SingleChildScrollView(
+          return const SingleChildScrollView(
             child: Padding(
-              padding: const EdgeInsets.only(top: 50),
+              padding: EdgeInsets.only(top: 50),
               child: Column(
                 children: [
-                  const SizedBox(height: 12),
-                  const Text(
+                  SizedBox(height: 12),
+                  Text(
                     // About us
                     'About us',
                     style: TextStyle(
@@ -32,17 +31,17 @@ class _AboutPageState extends State<AboutPage> {
                   ),
                   Padding(
                       // Lenser with gradient L
-                      padding: const EdgeInsets.only(left: 25, top: 10),
+                      padding: EdgeInsets.only(left: 25, top: 10),
                       child: Row(children: [
-                        const GradientText(
+                        GradientText(
                             text: "L",
-                            gradient:
-                                LinearGradient(colors: [circles, Colors.black]),
+                            gradient: LinearGradient(
+                                colors: [buttonColor, Colors.black]),
                             style: TextStyle(
                                 fontSize: 50, fontWeight: FontWeight.bold)),
                         text(txt: "enser", size: 50, weight: FontWeight.bold),
                       ])),
-                  const SizedBox(height: 15),
+                  SizedBox(height: 15),
                   text(
                       txt:
                           "This project was created by\nModern Academy students\nand used programming\n languages (Flutter, Python)\nand the help of artificial\nintelligence which\nparticipated in it :",
@@ -55,38 +54,27 @@ class _AboutPageState extends State<AboutPage> {
                       txt: "Ahmed Wael",
                       size: sizeWorkers,
                       weight: FontWeight.bold),
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10),
                   text(
                       txt: "Mahmoud Reda",
                       size: sizeWorkers,
                       weight: FontWeight.bold),
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10),
                   text(
                       txt: "Seif Ezz",
                       size: sizeWorkers,
                       weight: FontWeight.bold),
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10),
                   text(
                       txt: "Amro Rabea",
                       size: sizeWorkers,
                       weight: FontWeight.bold),
-                  const SizedBox(height: 10),
-                  text(
-                      txt: "Yousef Mohamed",
-                      size: sizeWorkers,
-                      weight: FontWeight.bold),
-                  const SizedBox(height: 10),
-                  text(
-                      txt: "Hossam Dyab",
-                      size: sizeWorkers,
-                      weight: FontWeight.bold),
-                  // ============
-                  const Padding(
+                  Padding(
                     // Divider
                     padding: EdgeInsets.only(left: 0, right: 0, top: 50),
                     child: Divider(thickness: 2),
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10),
                   text(
                       txt: "For contact",
                       size: sizeTitles,
@@ -95,27 +83,27 @@ class _AboutPageState extends State<AboutPage> {
                   // Contact Logos and links
                   Row(
                     children: [
-                      const Spacer(),
+                      Spacer(),
                       contacts(
                           imageUrl: 'images/gmail.png',
                           siteLink: "lenser5app@gmail.com",
                           txt: "Gmail"),
-                      const Spacer(),
+                      Spacer(),
                       contacts(
                           imageUrl: 'images/facebook.png',
                           siteLink: "https://google.com",
                           txt: "Facebook"),
-                      const Spacer(),
+                      Spacer(),
                       contacts(
                           imageUrl: 'images/twitter.png',
                           siteLink: "https://google.com",
                           txt: "Twitter"),
-                      const Spacer(),
+                      Spacer(),
                       contacts(
                           imageUrl: 'images/github.png',
                           siteLink: "https://google.com",
                           txt: "GitHub"),
-                      const Spacer(),
+                      Spacer(),
                     ],
                   ),
                 ],

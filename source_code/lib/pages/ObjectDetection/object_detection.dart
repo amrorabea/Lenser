@@ -43,10 +43,6 @@ class _ObjectDetectionState extends State<ObjectDetection> {
             screen.height,
             screen.width,
             "SSD MobileNet"),
-        Positioned(
-          child: Text("New Text"),
-          bottom: 170,
-        )
       ],
     );
   }

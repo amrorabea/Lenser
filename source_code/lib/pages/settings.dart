@@ -25,7 +25,7 @@ class _SettingsState extends State<Settings> {
             child: Column(
               children: [
                 const SizedBox(height: 12),
-                text(
+                const text(
                   txt: 'Settings',
                   size: 19,
                   weight: FontWeight.bold,

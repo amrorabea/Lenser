@@ -34,7 +34,11 @@ class loginScreen extends StatelessWidget {
                   const SizedBox(height: 140),
                   const Text(
                     "Welcome Back!",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30,
+                      fontFamily: 'Signika',
+                    ),
                   ),
                   Padding(
                     padding:
@@ -174,12 +178,13 @@ class loginScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      text(txt: " or ", size: 15),
+                      const text(txt: " or ", size: 15),
                       GestureDetector(
                         onTap: () {
                           auth.guest(context);
                         },
-                        child: text(txt: "Guest", size: 15, color: buttonColor),
+                        child: const text(
+                            txt: "Guest", size: 15, color: buttonColor),
                       ),
                     ],
                   ),
