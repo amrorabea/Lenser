@@ -64,16 +64,17 @@ class _OnboardingState extends State<Onboarding> {
                 }
               },
               child: Container(
-                width: 50,
-                height: 50,
-                decoration: BoxDecoration(
+                width: 40,
+                height: 40,
+                decoration: BoxDecoration(  
                   borderRadius: BorderRadius.circular(50),
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
                 child: const Center(
                   child: Icon(
                     Icons.arrow_forward_ios_sharp,
-                    size: 40.0,
+                    size: 30.0,
+                    color: Colors.white,
                   ),
                 ),
               ),
@@ -96,7 +97,9 @@ class _OnboardingState extends State<Onboarding> {
             height: i == currentPage ? 12 : 8,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: i == currentPage ? Colors.white : Colors.grey,
+              color: i == currentPage
+                  ? Colors.black
+                  : const Color.fromARGB(255, 99, 99, 99),
             ),
           ),
         ),
