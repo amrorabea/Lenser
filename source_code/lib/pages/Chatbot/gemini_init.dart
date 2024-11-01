@@ -13,7 +13,7 @@ class GeminiAPI {
   static Future<String> getGeminiData(message) async {
     try {
       String apiKey =
-          'AIzaSyCm4cAP76aSzTgzukIX62gfkUTgN7qwUXk'; //put your api Key here
+          'KEY2'; //put your api Key here
       final header = await getHeader();
 
       final Map<String, dynamic> requestBody = {
