@@ -18,7 +18,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
           options: const FirebaseOptions(
-              apiKey: 'AIzaSyBxHzaT-hGXgL6YMKXeKwfybM3Yr5XtMs0',
+              apiKey: 'KEY1',
               appId: '1:741907606467:android:d0b5be3b43c3050c86ab76',
               messagingSenderId: '741907606467',
               projectId: 'lenser-es'))
